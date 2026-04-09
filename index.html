@@ -208,12 +208,12 @@
   /* === DAY CARD === */
   .day-card {
     display: grid;
-    grid-template-columns: 72px 1fr;
+    grid-template-columns: 72px 1fr auto;
     background: #fff;
-    border-radius: 14px;
+    border-radius: 16px;
     border: 1px solid rgba(0,0,0,0.07);
     overflow: hidden;
-    margin-bottom: 12px;
+    margin-bottom: 14px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.03);
     transition: box-shadow .2s, transform .2s;
   }
@@ -230,6 +230,7 @@
     padding: 16px 8px;
     text-align: center;
     gap: 2px;
+    flex-shrink: 0;
   }
   .osaka .day-aside { background: var(--osaka-light); }
   .kyoto .day-aside { background: var(--kyoto-light); }
@@ -237,7 +238,7 @@
 
   .day-num {
     font-family: 'DM Serif Display', serif;
-    font-size: 20px;
+    font-size: 22px;
     line-height: 1;
   }
   .osaka .day-num { color: var(--osaka); }
@@ -257,7 +258,53 @@
     margin-top: 2px;
   }
 
-  .day-body { padding: 16px 20px; border-left: 1px solid rgba(0,0,0,0.06); }
+  .day-body {
+    padding: 16px 20px;
+    border-left: 1px solid rgba(0,0,0,0.06);
+    border-right: 1px solid rgba(0,0,0,0.06);
+    min-width: 0;
+  }
+
+  /* === PHOTO WALL === */
+  .day-photos {
+    display: flex;
+    flex-direction: column;
+    width: 220px;
+    flex-shrink: 0;
+    gap: 2px;
+    overflow: hidden;
+  }
+  .day-photos.has-one .photo-main {
+    height: 100%;
+  }
+  .day-photos .photo-main {
+    flex: 2;
+    overflow: hidden;
+  }
+  .day-photos .photo-row {
+    display: flex;
+    flex: 1;
+    gap: 2px;
+  }
+  .day-photos .photo-sub {
+    flex: 1;
+    overflow: hidden;
+  }
+  .day-photos img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .4s ease;
+  }
+  .day-card:hover .day-photos img {
+    transform: scale(1.04);
+  }
+
+  @media (max-width: 700px) {
+    .day-card { grid-template-columns: 60px 1fr; }
+    .day-photos { display: none; }
+  }
 
   .day-title {
     font-family: 'Noto Serif TC', serif;
@@ -605,6 +652,13 @@
           <span class="dot-item">定位：熟悉園區，輕鬆入場日</span>
         </div>
       </div>
+      <div class="day-photos">
+        <div class="photo-main"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Universal_Studios_Japan_2018_%281%29.jpg/640px-Universal_Studios_Japan_2018_%281%29.jpg" alt="USJ"></div>
+        <div class="photo-row">
+          <div class="photo-sub"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Osaka_Castle_in_November_2019.jpg/320px-Osaka_Castle_in_November_2019.jpg" alt="大阪城"></div>
+          <div class="photo-sub"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Kansai_International_Airport_at_night_Jan_2018.jpg/320px-Kansai_International_Airport_at_night_Jan_2018.jpg" alt="關西機場"></div>
+        </div>
+      </div>
     </div>
 
     <div class="day-card osaka">
@@ -624,6 +678,13 @@
           <span class="dot-item">侏羅紀 The Ride · Flying Dinosaur 視情況</span>
           <span class="dot-item">能量手環、魔杖可現場購買，不需提前預訂</span>
           <span class="dot-item">定位：大阪最累的一天，全力出擊</span>
+        </div>
+      </div>
+      <div class="day-photos">
+        <div class="photo-main"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Wizarding_World_of_Harry_Potter_%28Hogsmeade%29_in_Universal_Studios_Japan.jpg/640px-Wizarding_World_of_Harry_Potter_%28Hogsmeade%29_in_Universal_Studios_Japan.jpg" alt="哈利波特區"></div>
+        <div class="photo-row">
+          <div class="photo-sub"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/The_Forbidden_Journey_at_USJ.jpg/320px-The_Forbidden_Journey_at_USJ.jpg" alt="USJ 設施"></div>
+          <div class="photo-sub"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Nintendo_World_at_Universal_Studios_Japan.jpg/320px-Nintendo_World_at_Universal_Studios_Japan.jpg" alt="任天堂世界"></div>
         </div>
       </div>
     </div>
@@ -647,6 +708,13 @@
           <span class="dot-item">定位：大阪代表景點日</span>
         </div>
       </div>
+      <div class="day-photos">
+        <div class="photo-main"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Osaka_Castle_in_November_2019.jpg/640px-Osaka_Castle_in_November_2019.jpg" alt="大阪城"></div>
+        <div class="photo-row">
+          <div class="photo-sub"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Dotonbori_Osaka_2009.jpg/320px-Dotonbori_Osaka_2009.jpg" alt="道頓堀"></div>
+          <div class="photo-sub"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Takoyaki_preparation.jpg/320px-Takoyaki_preparation.jpg" alt="章魚燒"></div>
+        </div>
+      </div>
     </div>
 
     <div class="day-card osaka">
@@ -664,6 +732,13 @@
           <span class="dot-item">定位：USJ 後的親子舒適日</span>
         </div>
       </div>
+      <div class="day-photos">
+        <div class="photo-main"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Kaiyukan_Aquarium%2C_Osaka_%282009%29.jpg/640px-Kaiyukan_Aquarium%2C_Osaka_%282009%29.jpg" alt="海遊館"></div>
+        <div class="photo-row">
+          <div class="photo-sub"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Whale_shark_Georgia_aquarium.jpg/320px-Whale_shark_Georgia_aquarium.jpg" alt="鯨鯊"></div>
+          <div class="photo-sub"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Jellyfishes_in_Omaha%27s_Henry_Doorly_Zoo_and_Aquarium_1.jpg/320px-Jellyfishes_in_Omaha%27s_Henry_Doorly_Zoo_and_Aquarium_1.jpg" alt="水母"></div>
+        </div>
+      </div>
     </div>
 
     <div class="day-card osaka">
@@ -679,6 +754,13 @@
           <span class="dot-item">下午視體力：<a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Pokemon+Center+Osaka" target="_blank" rel="noopener">Pokémon Center</a>（小孩優先）或<a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Umeda+Osaka" target="_blank" rel="noopener">梅田</a>逛街（大人）</span>
           <span class="dot-item">很累就直接輕鬆收尾</span>
           <span class="dot-item">定位：大阪最後彈性日</span>
+        </div>
+      </div>
+      <div class="day-photos">
+        <div class="photo-main"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Umeda_Osaka_2014.jpg/640px-Umeda_Osaka_2014.jpg" alt="梅田大阪"></div>
+        <div class="photo-row">
+          <div class="photo-sub"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Osaka_night_view_from_Umeda_Sky_Building.jpg/320px-Osaka_night_view_from_Umeda_Sky_Building.jpg" alt="大阪夜景"></div>
+          <div class="photo-sub"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Hep_Five_Ferris_Wheel_Osaka.jpg/320px-Hep_Five_Ferris_Wheel_Osaka.jpg" alt="HEP Five 摩天輪"></div>
         </div>
       </div>
     </div>
@@ -706,6 +788,13 @@
           <span class="dot-item"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Kiyomizu-dera+Kyoto" target="_blank" rel="noopener">清水寺</a>（怕公車擠可搭計程車 / Uber Taxi）</span>
           <span class="dot-item"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Gion+Kyoto" target="_blank" rel="noopener">祇園</a>散步、二寧坂一帶</span>
           <span class="dot-item">定位：搬飯店日，景點不多加，輕鬆開場</span>
+        </div>
+      </div>
+      <div class="day-photos">
+        <div class="photo-main"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Kiyomizu-dera_in_Kyoto_-_Nov_2017.jpg/640px-Kiyomizu-dera_in_Kyoto_-_Nov_2017.jpg" alt="清水寺"></div>
+        <div class="photo-row">
+          <div class="photo-sub"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Gion_Kyoto_Nov2016.jpg/320px-Gion_Kyoto_Nov2016.jpg" alt="祇園"></div>
+          <div class="photo-sub"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Ninenzaka_Kyoto_2019.jpg/320px-Ninenzaka_Kyoto_2019.jpg" alt="二寧坂"></div>
         </div>
       </div>
     </div>
@@ -736,6 +825,13 @@
           <span class="dot-item">定位：古蹟 + 輕鬆吃東西日</span>
         </div>
       </div>
+      <div class="day-photos">
+        <div class="photo-main"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Fushimi_Inari_Taisha_2016.jpg/640px-Fushimi_Inari_Taisha_2016.jpg" alt="伏見稻荷"></div>
+        <div class="photo-row">
+          <div class="photo-sub"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Fushimi_Inari-taisha_torii.jpg/320px-Fushimi_Inari-taisha_torii.jpg" alt="鳥居隧道"></div>
+          <div class="photo-sub"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Nishiki_Market_Kyoto.jpg/320px-Nishiki_Market_Kyoto.jpg" alt="錦市場"></div>
+        </div>
+      </div>
     </div>
 
     <div class="day-card kyoto">
@@ -755,6 +851,13 @@
           <span class="dot-item">二選一：<a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Sagano+Romantic+Train" target="_blank" rel="noopener">嵯峨野小火車</a> 或 <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Iwatayama+Monkey+Park" target="_blank" rel="noopener">嵐山猴子公園</a></span>
           <span class="dot-item" style="color:var(--osaka)">⚠️ 不要兩個都塞，會太趕</span>
           <span class="dot-item">定位：京都自然景點 + 親子活動日</span>
+        </div>
+      </div>
+      <div class="day-photos">
+        <div class="photo-main"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Kyoto_Arashiyama_Bamboo_Grove_%282015%29.jpg/640px-Kyoto_Arashiyama_Bamboo_Grove_%282015%29.jpg" alt="嵐山竹林"></div>
+        <div class="photo-row">
+          <div class="photo-sub"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Togetsukyo_Bridge%2C_Arashiyama_Kyoto_-_Nov_2017.jpg/320px-Togetsukyo_Bridge%2C_Arashiyama_Kyoto_-_Nov_2017.jpg" alt="渡月橋"></div>
+          <div class="photo-sub"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Sagano_Scenic_Railway_train.jpg/320px-Sagano_Scenic_Railway_train.jpg" alt="嵯峨野小火車"></div>
         </div>
       </div>
     </div>
@@ -779,6 +882,13 @@
           <span class="dot-item">定位：京都最後一天，經典古蹟 + 親子補強</span>
         </div>
       </div>
+      <div class="day-photos">
+        <div class="photo-main"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Kinkaku-ji_2015.jpg/640px-Kinkaku-ji_2015.jpg" alt="金閣寺"></div>
+        <div class="photo-row">
+          <div class="photo-sub"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Kyoto_Railway_Museum_exterior.jpg/320px-Kyoto_Railway_Museum_exterior.jpg" alt="京都鐵道博物館"></div>
+          <div class="photo-sub"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Kyoto_Railway_Museum_steam_locomotive.jpg/320px-Kyoto_Railway_Museum_steam_locomotive.jpg" alt="蒸汽火車"></div>
+        </div>
+      </div>
     </div>
 
     <div class="day-card travel">
@@ -798,6 +908,9 @@
           <span class="dot-item">依實際航班時間前往關西機場，建議至少提前 2.5 小時到機場</span>
           <span class="dot-item">搭機返台</span>
         </div>
+      </div>
+      <div class="day-photos has-one">
+        <div class="photo-main"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Kansai_International_Airport_at_night_Jan_2018.jpg/640px-Kansai_International_Airport_at_night_Jan_2018.jpg" alt="關西機場"></div>
       </div>
     </div>
   </section>
