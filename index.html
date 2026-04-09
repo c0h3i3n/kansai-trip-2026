@@ -485,6 +485,53 @@
     line-height: 1.7;
     text-align: center;
   }
+
+  .hero-actions {
+    margin-top: 22px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .hero-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 11px 18px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: .04em;
+    transition: transform .2s, background .2s, border-color .2s, color .2s;
+  }
+
+  .hero-button-primary {
+    color: #fff;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.18);
+  }
+
+  .hero-button-primary:hover {
+    background: rgba(255,255,255,0.18);
+    transform: translateY(-1px);
+  }
+
+  .hero-button-outline {
+    color: rgba(255,255,255,0.82);
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.22);
+  }
+
+  .hero-button-outline:hover {
+    color: #fff;
+    border-color: rgba(255,255,255,0.34);
+    background: rgba(255,255,255,0.06);
+    transform: translateY(-1px);
+  }
+
 </style>
 </head>
 <body>
@@ -502,6 +549,10 @@
       <span class="hero-pill kyoto">🟢 京都 4晚</span>
       <span class="hero-pill">Tiger Air via 桃園</span>
     </div>
+    <div class="hero-actions">
+      <a href="details.html" class="hero-button hero-button-primary">查看詳細資訊</a>
+      <a href="#budget" class="hero-button hero-button-outline">直接看預算</a>
+    </div>
   </div>
 </div>
 
@@ -512,6 +563,7 @@
   <a href="#kyoto" class="nav-tab kyoto-tab">京都</a>
   <a href="#hotels" class="nav-tab info-tab">住宿</a>
   <a href="#reminders" class="nav-tab info-tab">提醒事項</a>
+  <a href="details.html" class="nav-tab info-tab">詳細資訊</a>
   <a href="#budget" class="nav-tab info-tab">預算</a>
 </nav>
 
