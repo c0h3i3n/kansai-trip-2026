@@ -9,43 +9,99 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Noto+Sans+TC:wght@300;400;500;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--osaka:#C4541A;--osaka-light:#FDF0E8;--kyoto:#2A7A5A;--kyoto-light:#E8F5EE;--ink:#1A1612;--ink-soft:#4A3F35;--ink-muted:#8C7B6E;--paper:#FBF8F4;--paper-warm:#F5EFE6;--line:rgba(0,0,0,.08);--card:#fff;--blue:#1A4FAD;--blue-bg:#E8F0FE;--warn:#7A4F00;--warn-bg:#FEF3CD}
-body{font-family:'Noto Sans TC',sans-serif;background:var(--paper);color:var(--ink);line-height:1.7}
+:root{
+  --osaka:#C4541A;--osaka-light:#FDF0E8;--osaka-mid:#F5C9A8;
+  --kyoto:#2A7A5A;--kyoto-light:#E8F5EE;--kyoto-mid:#A3D4BC;
+  --ink:#1A1612;--ink-soft:#4A3F35;--ink-muted:#8C7B6E;
+  --paper:#FBF8F4;--paper-warm:#F5EFE6;--line:rgba(0,0,0,.07);
+  --card:#fff;--blue:#1A4FAD;--blue-bg:#E8F0FE;--blue-mid:#93B4F5;
+  --warn:#7A4F00;--warn-bg:#FEF3CD;--warn-mid:#F5C842;
+  --shadow: 0 1px 3px rgba(0,0,0,.04), 0 4px 14px rgba(0,0,0,.05);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans TC',sans-serif;background:var(--paper);color:var(--ink);line-height:1.75}
+
+/* HERO */
 .hero{background:var(--ink);color:#fff;padding:56px 24px 40px;position:relative;overflow:hidden;text-align:center}
 .hero:before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 20% 50%, rgba(196,84,26,.25) 0%, transparent 60%),radial-gradient(ellipse 60% 80% at 80% 30%, rgba(42,122,90,.2) 0%, transparent 60%)}
 .hero>*{position:relative;z-index:1}
 .eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:14px}
 .title{font-family:'DM Serif Display',serif;font-size:clamp(34px,7vw,58px);line-height:1.1}
 .subtitle{font-family:'Noto Serif TC',serif;font-size:15px;color:rgba(255,255,255,.68);margin-top:10px}
-.back-link{display:inline-block;margin-top:22px;padding:8px 14px;border:1px solid rgba(255,255,255,.18);border-radius:999px;background:rgba(255,255,255,.08);text-decoration:none;font-size:12px;color:#fff}
-.wrap{max-width:960px;margin:0 auto;padding:36px 18px 72px}
-.section{margin-bottom:36px}
-.section-head{display:flex;align-items:center;gap:12px;margin-bottom:16px}
-.dot{width:10px;height:10px;border-radius:50%}
+.back-link{display:inline-block;margin-top:22px;padding:8px 14px;border:1px solid rgba(255,255,255,.18);border-radius:999px;background:rgba(255,255,255,.08);text-decoration:none;font-size:12px;color:#fff;transition:background .2s}
+.back-link:hover{background:rgba(255,255,255,.14)}
+
+/* LAYOUT */
+.wrap{max-width:960px;margin:0 auto;padding:44px 20px 80px}
+.section{margin-bottom:48px}
+.section-head{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
 .line{flex:1;height:1px;background:var(--paper-warm);border:none}
 .section-title{font-family:'DM Serif Display',serif;font-size:24px}
-.cards,.subgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 18px 16px;box-shadow:0 2px 10px rgba(0,0,0,.03)}
-.card h3{font-family:'Noto Serif TC',serif;font-size:17px;margin-bottom:10px}
-.list{display:grid;gap:8px}
-.list div{font-size:13px;color:var(--ink-soft)}
-.list div strong{color:var(--ink)}
-.tag{display:inline-block;font-size:11px;padding:3px 10px;border-radius:999px;margin-bottom:10px}
-.tag.osaka{background:var(--osaka-light);color:var(--osaka)}
-.tag.kyoto{background:var(--kyoto-light);color:var(--kyoto)}
-.tag.info{background:var(--blue-bg);color:var(--blue)}
-.tag.warn{background:var(--warn-bg);color:var(--warn)}
-.pillrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
-.pill{font-size:11px;border-radius:999px;padding:4px 10px;background:var(--paper-warm);color:var(--ink-soft)}
-table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.03)}
-th,td{padding:12px 14px;border-bottom:1px solid var(--line);text-align:left;font-size:13px;vertical-align:top}
+
+/* CARDS */
+.cards,.subgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:20px 20px 18px;
+  box-shadow:var(--shadow);
+  transition:box-shadow .2s, transform .2s;
+}
+.card:hover{box-shadow:0 2px 8px rgba(0,0,0,.07), 0 8px 24px rgba(0,0,0,.07);transform:translateY(-1px)}
+.card h3{font-family:'Noto Serif TC',serif;font-size:17px;margin-bottom:12px;color:var(--ink)}
+
+/* Color-coded left border accent on cards */
+.card.osaka-card { border-left: 4px solid var(--osaka); }
+.card.kyoto-card  { border-left: 4px solid var(--kyoto); }
+.card.blue-card   { border-left: 4px solid var(--blue); }
+.card.warn-card   { border-left: 4px solid var(--warn-mid); }
+
+/* LISTS */
+.list{display:grid;gap:9px}
+.list div{font-size:14px;color:var(--ink-soft);line-height:1.65}
+.list div strong{color:var(--ink);font-weight:600}
+
+/* TAGS */
+.tag{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.05em;padding:4px 12px;border-radius:999px;margin-bottom:12px}
+.tag.osaka{background:var(--osaka-light);color:var(--osaka);border:1px solid var(--osaka-mid)}
+.tag.kyoto{background:var(--kyoto-light);color:var(--kyoto);border:1px solid var(--kyoto-mid)}
+.tag.info{background:var(--blue-bg);color:var(--blue);border:1px solid var(--blue-mid)}
+.tag.warn{background:var(--warn-bg);color:var(--warn);border:1px solid var(--warn-mid)}
+
+/* PILLS */
+.pillrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.pill{font-size:12px;border-radius:999px;padding:4px 12px;background:var(--paper-warm);color:var(--ink-soft);border:1px solid rgba(0,0,0,.06)}
+
+/* TABLE */
+table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow)}
+th,td{padding:13px 16px;border-bottom:1px solid var(--line);text-align:left;font-size:14px;vertical-align:top}
 tr:last-child td{border-bottom:none}
-th{background:var(--paper-warm);font-weight:700;color:var(--ink)}
+th{background:var(--paper-warm);font-weight:700;color:var(--ink);font-size:12px;letter-spacing:.04em;text-transform:uppercase}
+tr:hover td{background:rgba(0,0,0,.015)}
+
+/* FOOTER */
 .footer{text-align:center;color:var(--ink-muted);font-size:12px;padding-top:16px}
-@media (max-width:720px){.cards,.subgrid{grid-template-columns:1fr}th,td{font-size:12px;padding:10px 11px}}
+
+@media(max-width:720px){
+  .cards,.subgrid{grid-template-columns:1fr}
+  th,td{font-size:13px;padding:11px 13px}
+  .wrap{padding:32px 16px 60px}
+}
 
 .map-link{color:var(--blue);text-decoration:underline;text-decoration-color:rgba(26,79,173,.35);text-underline-offset:2px;font-weight:500}
 .map-link:hover{opacity:.9;text-decoration-color:rgba(26,79,173,.65)}
+
+/* === STICKY NAV === */
+.sticky-nav{position:sticky;top:0;z-index:100;background:var(--ink);border-bottom:1px solid rgba(255,255,255,.08);display:flex;justify-content:center;gap:0;padding:0 16px;overflow-x:auto;scrollbar-width:none}
+.sticky-nav::-webkit-scrollbar{display:none}
+.sticky-nav a{font-family:'Noto Sans TC',sans-serif;font-size:12px;font-weight:500;letter-spacing:.06em;color:rgba(255,255,255,.42);padding:13px 16px;cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;transition:color .2s,border-color .2s;text-decoration:none;display:block}
+.sticky-nav a:hover,.sticky-nav a.active{color:rgba(255,255,255,.85);border-color:rgba(255,255,255,.4)}
+
+/* === BACK TO TOP BUTTON === */
+.back-to-top{display:inline-flex;align-items:center;gap:6px;padding:9px 16px;border:1px solid rgba(255,255,255,.18);border-radius:999px;background:rgba(255,255,255,.08);text-decoration:none;font-size:12px;color:rgba(255,255,255,.75);transition:background .2s}
+.back-to-top:hover{background:rgba(255,255,255,.14)}
 
 </style>
 </head>
@@ -57,12 +113,22 @@ th{background:var(--paper-warm);font-weight:700;color:var(--ink)}
 <a class="back-link" href="./">← 返回主頁</a>
 </header>
 
+<nav class="sticky-nav" id="top">
+  <a href="#flights">航班</a>
+  <a href="#hotels-detail">住宿</a>
+  <a href="#tickets">票券</a>
+  <a href="#transport">交通</a>
+  <a href="#backup">備案</a>
+  <a href="#credits">圖片授權</a>
+  <a href="./">← 主頁</a>
+</nav>
+
 <main class="wrap">
 
-<section class="section">
+<section class="section" id="flights">
 <div class="section-head"><div class="dot" style="background:#1A4FAD"></div><h2 class="section-title">航班資訊</h2><hr class="line"></div>
 <div class="cards">
-<div class="card">
+<div class="card blue-card">
 <span class="tag info">去程</span>
 <h3>台北 → 大阪</h3>
 <div class="list">
@@ -72,7 +138,7 @@ th{background:var(--paper-warm);font-weight:700;color:var(--ink)}
 <div><strong>建議：</strong>至少提早 2.5–3 小時到機場</div>
 </div>
 </div>
-<div class="card">
+<div class="card blue-card">
 <span class="tag info">回程</span>
 <h3>大阪 → 台北</h3>
 <div class="list">
@@ -83,19 +149,19 @@ th{background:var(--paper-warm);font-weight:700;color:var(--ink)}
 </div>
 </div>
 </div>
-<div class="card" style="margin-top:14px">
-<span class="tag warn">行李</span>
+<div class="card warn-card" style="margin-top:14px">
+<span class="tag warn">行李（Tiger Air）</span>
 <div class="list">
-<div><strong>目前已知：</strong>已加購託運行李</div>
-<div><strong>主頁建議：</strong>主頁只寫「早上抵達關西 / 上午前往機場」，完整時間放在這頁最剛好</div>
+<div><strong>托運：</strong>1 件 20kg</div>
+<div><strong>隨身：</strong>4 件各 10kg（每人 1 件）</div>
 </div>
 </div>
 </section>
 
-<section class="section">
+<section class="section" id="hotels-detail">
 <div class="section-head"><div class="dot" style="background:#6B5E4E"></div><h2 class="section-title">住宿細節</h2><hr class="line"></div>
 <div class="cards">
-<div class="card">
+<div class="card osaka-card">
 <span class="tag osaka">大阪住宿</span>
 <h3><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=ESLEAD+HOTEL+Osaka+Nipponbashi" target="_blank" rel="noopener">ESLEAD HOTEL Osaka Nipponbashi</a></h3>
 <div class="list">
@@ -107,7 +173,7 @@ th{background:var(--paper-warm);font-weight:700;color:var(--ink)}
 <div><strong>特色：</strong>公寓式、近地鐵、家庭實用型</div>
 </div>
 </div>
-<div class="card">
+<div class="card kyoto-card">
 <span class="tag kyoto">京都住宿</span>
 <h3><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=RESI+STAY+HEART+Kyoto" target="_blank" rel="noopener">RESI STAY HEART</a></h3>
 <div class="list">
@@ -123,10 +189,10 @@ th{background:var(--paper-warm);font-weight:700;color:var(--ink)}
 </div>
 </section>
 
-<section class="section">
+<section class="section" id="tickets">
 <div class="section-head"><div class="dot" style="background:#D4870A"></div><h2 class="section-title">票券與預約</h2><hr class="line"></div>
 <div class="subgrid">
-<div class="card">
+<div class="card warn-card">
 <span class="tag warn"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Universal+Studios+Japan" target="_blank" rel="noopener">USJ</a></span>
 <h3>環球影城購票重點</h3>
 <div class="list">
@@ -138,7 +204,7 @@ th{background:var(--paper-warm);font-weight:700;color:var(--ink)}
 </div>
 <div class="pillrow"><span class="pill">哈利波特優先</span><span class="pill">任天堂非主軸</span><span class="pill">Express Pass 最重要</span></div>
 </div>
-<div class="card">
+<div class="card kyoto-card">
 <span class="tag warn">嵐山小火車</span>
 <h3><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Sagano+Romantic+Train" target="_blank" rel="noopener">嵯峨野觀光小火車</a></h3>
 <div class="list">
@@ -166,7 +232,7 @@ th{background:var(--paper-warm);font-weight:700;color:var(--ink)}
 </table>
 </section>
 
-<section class="section">
+<section class="section" id="transport">
 <div class="section-head"><div class="dot" style="background:#2A7A5A"></div><h2 class="section-title">交通備註</h2><hr class="line"></div>
 <table>
 <thead><tr><th>日期</th><th>交通重點</th><th>建議</th></tr></thead>
@@ -179,7 +245,7 @@ th{background:var(--paper-warm);font-weight:700;color:var(--ink)}
 <tr><td>7/29</td><td>京都 → 關西機場</td><td>早上直接出發，保守抓寬鬆時間</td></tr>
 </tbody>
 </table>
-<div class="card" style="margin-top:14px">
+<div class="card blue-card" style="margin-top:14px">
 <span class="tag info">京都公車</span>
 <div class="list">
 <div><strong>結論：</strong>能避就避，特別是清水寺、金閣寺兩天</div>
@@ -189,10 +255,10 @@ th{background:var(--paper-warm);font-weight:700;color:var(--ink)}
 </div>
 </section>
 
-<section class="section">
+<section class="section" id="backup">
 <div class="section-head"><div class="dot" style="background:#888"></div><h2 class="section-title">備案與刪減順序</h2><hr class="line"></div>
 <div class="cards">
-<div class="card">
+<div class="card blue-card">
 <span class="tag info">太累時</span>
 <div class="list">
 <div><strong>7/24：</strong><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Kids+Plaza+Osaka" target="_blank" rel="noopener">Kids Plaza</a> 後直接回飯店，不一定去 <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Umeda+Osaka" target="_blank" rel="noopener">梅田</a></div>
@@ -200,7 +266,7 @@ th{background:var(--paper-warm);font-weight:700;color:var(--ink)}
 <div><strong>7/28：</strong>先保留 <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Kinkaku-ji" target="_blank" rel="noopener">金閣寺</a> + <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Kyoto+Railway+Museum" target="_blank" rel="noopener">京都鐵道博物館</a>，<a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Kyoto+Aquarium" target="_blank" rel="noopener">京都水族館</a>直接刪</div>
 </div>
 </div>
-<div class="card">
+<div class="card warn-card">
 <span class="tag warn">下雨時</span>
 <div class="list">
 <div><strong>嵐山日：</strong>若天氣差，可縮短<a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Arashiyama+Kyoto" target="_blank" rel="noopener">嵐山</a>戶外散步時間</div>
@@ -211,7 +277,50 @@ th{background:var(--paper-warm);font-weight:700;color:var(--ink)}
 </div>
 </section>
 
-<div class="footer">Detailed Notes for Kansai Trip 2026 · 可直接搭配主頁使用</div>
+<section class="section" id="credits">
+<div class="section-head"><div class="dot" style="background:#aaa"></div><h2 class="section-title">圖片來源與授權</h2><hr class="line"></div>
+<div class="card">
+<div class="list">
+<div><strong>所有照片</strong>均來自 <a class="map-link" href="https://commons.wikimedia.org/" target="_blank" rel="noopener">Wikimedia Commons</a>，採用 Creative Commons 授權（CC BY / CC BY-SA / Public Domain）。</div>
+<div>· 大阪城 — <em>Wikimedia Commons, CC BY-SA</em></div>
+<div>· 道頓堀 — <em>Wikimedia Commons, CC BY-SA</em></div>
+<div>· 海遊館 — <em>Wikimedia Commons, CC BY-SA</em></div>
+<div>· 梅田夜景 — <em>Wikimedia Commons, CC BY-SA</em></div>
+<div>· 清水寺 — <em>Wikimedia Commons, CC BY-SA</em></div>
+<div>· 伏見稻荷千本鳥居 — <em>Wikimedia Commons, CC BY-SA</em></div>
+<div>· 嵐山竹林 — <em>Wikimedia Commons, CC BY-SA</em></div>
+<div>· 金閣寺 — <em>Wikimedia Commons, CC BY-SA</em></div>
+<div>· 關西機場 — <em>Wikimedia Commons, Public Domain</em></div>
+<div style="margin-top:6px;color:var(--ink-muted)">本網站為私人家庭旅遊規劃，無商業用途。</div>
+</div>
+</div>
+</section>
+
+<div class="footer" style="padding:28px 20px 20px">
+  <a href="#top" class="back-to-top">↑ 回到頂部</a>
+  &nbsp;&nbsp;
+  <a href="./" class="back-to-top">← 返回主頁</a>
+  <div style="margin-top:16px">Detailed Notes for Kansai Trip 2026 · 可直接搭配主頁使用</div>
+</div>
 </main>
+<script>
+  const detailSections = ['flights','hotels-detail','tickets','transport','backup','credits'];
+  const detailTabs = document.querySelectorAll('.sticky-nav a');
+  function updateDetailNav() {
+    const scrollY = window.scrollY + 80;
+    let current = detailSections[0];
+    detailSections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el && el.offsetTop <= scrollY) current = id;
+    });
+    detailTabs.forEach(t => {
+      t.classList.remove('active');
+      const href = t.getAttribute('href').replace('#','');
+      if (href === current) t.classList.add('active');
+    });
+  }
+  window.addEventListener('scroll', updateDetailNav, { passive: true });
+  updateDetailNav();
+</script>
 </body>
 </html>
