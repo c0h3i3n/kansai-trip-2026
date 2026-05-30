@@ -685,6 +685,142 @@
 .hero .map-link,
 .nav-tabs .map-link { color: inherit; text-decoration-color: rgba(255,255,255,.2); }
 
+
+/* ============================================ */
+/* 🎬 ENHANCEMENT: Scroll Reveal               */
+/* ============================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal.delay-1 { transition-delay: 0.1s; }
+.reveal.delay-2 { transition-delay: 0.2s; }
+.reveal.delay-3 { transition-delay: 0.3s; }
+.reveal.delay-4 { transition-delay: 0.4s; }
+.reveal.delay-5 { transition-delay: 0.5s; }
+
+/* Transport Hover */
+.transport-icon {
+  display: inline-flex; align-items: center; gap: 12px;
+  padding: 12px 20px; border-radius: 40px;
+  background: var(--travel-light); cursor: pointer;
+  transition: background 0.3s, box-shadow 0.3s;
+  user-select: none; font-size: 14px; color: var(--ink-soft);
+}
+.transport-icon:hover { background: #ebe3d9; box-shadow: 0 4px 14px rgba(0,0,0,0.08); }
+.train-svg { width: 40px; height: 24px; flex-shrink: 0; }
+.train-body  { fill: var(--osaka); transition: fill 0.3s; }
+.train-wheel { fill: #333; }
+.train-line { stroke: var(--osaka); stroke-width: 2; stroke-dasharray: 100; stroke-dashoffset: 100; opacity: 0; }
+.transport-icon:hover .train-body { fill: var(--kyoto); }
+.transport-icon:hover .train-wheel { animation: wheelSpin 0.4s ease-in-out; }
+.transport-icon:hover .train-line { opacity: 1; transition: stroke-dashoffset 0.6s ease, opacity 0.2s; stroke-dashoffset: 0; }
+.plane-icon {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 18px; border-radius: 40px;
+  background: var(--info-bg); cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+  user-select: none; font-size: 14px; color: var(--info-text);
+}
+.plane-icon:hover { background: #d0e2fc; transform: translateX(8px); }
+.plane-svg { width: 36px; height: 24px; flex-shrink: 0; }
+.plane-body { fill: var(--info-text); transition: fill 0.3s; }
+.plane-trail { stroke: var(--info-border); stroke-width: 2; stroke-dasharray: 60; stroke-dashoffset: 60; }
+.plane-icon:hover .plane-body { fill: #0d3a8a; }
+.plane-icon:hover .plane-trail { stroke-dashoffset: 0; transition: stroke-dashoffset 0.5s ease; }
+.bus-icon {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 18px; border-radius: 40px;
+  background: var(--teal-bg); cursor: pointer;
+  transition: background 0.3s, box-shadow 0.3s;
+  user-select: none; font-size: 14px; color: var(--teal-text);
+}
+.bus-icon:hover { background: #c5ebd9; box-shadow: 0 4px 12px rgba(42,122,90,0.2); }
+.bus-svg { width: 36px; height: 24px; flex-shrink: 0; }
+.bus-body  { fill: var(--kyoto); transition: fill 0.3s; }
+.bus-wheel { fill: #333; }
+.bus-icon:hover .bus-body { fill: #1e5e46; }
+.bus-icon:hover .bus-wheel { animation: wheelSpin 0.4s ease-in-out; }
+@keyframes wheelSpin {
+  0% { transform: rotate(0deg); transform-origin: center; }
+  50% { transform: rotate(20deg); transform-origin: center; }
+  100% { transform: rotate(0deg); transform-origin: center; }
+}
+
+/* Nav Tab Glow */
+.nav-tab { position: relative; }
+.nav-tab::after {
+  content: '';
+  position: absolute; bottom: 0; left: 50%; right: 50%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #C4541A 30%, #C4541A 70%, transparent);
+  border-radius: 2px; transition: left 0.3s ease, right 0.3s ease;
+  box-shadow: 0 0 8px rgba(196,84,26,0.4);
+}
+.nav-tab:hover::after, .nav-tab.active::after { left: 10%; right: 10%; }
+.nav-tab.kyoto-tab::after {
+  background: linear-gradient(90deg, transparent, #2A7A5A 30%, #2A7A5A 70%, transparent);
+  box-shadow: 0 0 8px rgba(42,122,90,0.4);
+}
+.nav-tab.info-tab::after {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4) 30%, rgba(255,255,255,0.4) 70%, transparent);
+  box-shadow: 0 0 8px rgba(255,255,255,0.15);
+}
+
+/* Flip Clock */
+#countdown { display: flex; gap: 10px; align-items: center; justify-content: center; flex-wrap: wrap; }
+.flip-unit { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.flip-label { font-size: 10px; letter-spacing: 0.08em; color: rgba(255,255,255,0.5); }
+.flip-card {
+  position: relative; width: 56px; height: 68px;
+  background: #1a1612; border-radius: 8px; overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.08);
+  display: flex; align-items: center; justify-content: center;
+}
+.flip-card span {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 28px; font-weight: 700;
+  color: #f5c9a8; position: relative; z-index: 2; line-height: 1;
+}
+.flip-card::before {
+  content: ''; position: absolute; left: 0; right: 0; top: 50%;
+  height: 1px; background: rgba(0,0,0,0.4); z-index: 3;
+}
+.flip-card::after {
+  content: ''; position: absolute; left: 0; right: 0; top: 0; bottom: 50%;
+  background: rgba(255,255,255,0.04); z-index: 1;
+}
+.flip-card.flip { animation: flipPulse 0.3s ease; }
+@keyframes flipPulse {
+  0% { transform: scaleY(1); }
+  50% { transform: scaleY(1.04); }
+  100% { transform: scaleY(1); }
+}
+.flip-sep { font-family: 'DM Serif Display', Georgia, serif; font-size: 24px; color: #C4541A; padding-top: 12px; }
+
+/* Weather Widget */
+.weather-bar {
+  display: flex; gap: 20px; justify-content: center;
+  padding: 14px 24px;
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  border-radius: 12px; color: #fff; margin-bottom: 20px;
+}
+.weather-city { flex: 1; min-width: 120px; text-align: center; }
+.weather-city-name { font-size: 10px; letter-spacing: 0.08em; color: rgba(255,255,255,0.5); }
+.weather-temp { font-family: 'DM Serif Display', Georgia, serif; font-size: 24px; }
+.weather-temp small { font-size: 12px; color: rgba(255,255,255,0.5); }
+.weather-desc { font-size: 11px; color: rgba(255,255,255,0.7); margin-top: 2px; }
+
+@media (max-width: 500px) {
+  .flip-card { width: 44px; height: 56px; }
+  .flip-card span { font-size: 22px; }
+  .flip-sep { font-size: 18px; }
+  .weather-bar { flex-direction: column; gap: 10px; }
+}
+
 </style>
 </head>
 <body>
@@ -721,6 +857,19 @@
 </nav>
 
 <main class="main">
+  <div class="weather-bar" id="weather-bar">
+    <div class="weather-city">
+      <div class="weather-city-name">🟠 大阪 Osaka</div>
+      <div class="weather-temp"><span id="wt-osaka-temp">--</span><small>°C</small></div>
+      <div class="weather-desc" id="wt-osaka-desc">載入中...</div>
+    </div>
+    <div class="weather-city">
+      <div class="weather-city-name">🟢 京都 Kyoto</div>
+      <div class="weather-temp"><span id="wt-kyoto-temp">--</span><small>°C</small></div>
+      <div class="weather-desc" id="wt-kyoto-desc">載入中...</div>
+    </div>
+  </div>
+
 
   <div class="countdown-bar">
     <div class="countdown-label">✈️ 距出發還有</div>
@@ -747,7 +896,7 @@
       <span style="font-size:12px;color:var(--ink-muted);white-space:nowrap">7/20 – 7/24 · 5天</span>
     </div>
 
-    <div class="day-card osaka">
+    <div class="day-card osaka" reveal>
       <div class="day-aside">
         <div class="day-num">20</div>
         <div class="day-month">7月</div>
@@ -771,7 +920,7 @@
       </div>
     </div>
 
-    <div class="day-card osaka">
+    <div class="day-card osaka" reveal>
       <div class="day-aside">
         <div class="day-num">21</div>
         <div class="day-month">7月</div>
@@ -796,7 +945,7 @@
       </div>
     </div>
 
-    <div class="day-card osaka">
+    <div class="day-card osaka" reveal>
       <div class="day-aside">
         <div class="day-num">22</div>
         <div class="day-month">7月</div>
@@ -820,7 +969,7 @@
       </div>
     </div>
 
-    <div class="day-card osaka">
+    <div class="day-card osaka" reveal>
       <div class="day-aside">
         <div class="day-num">23</div>
         <div class="day-month">7月</div>
@@ -840,7 +989,7 @@
       </div>
     </div>
 
-    <div class="day-card osaka">
+    <div class="day-card osaka" reveal>
       <div class="day-aside">
         <div class="day-num">24</div>
         <div class="day-month">7月</div>
@@ -869,7 +1018,7 @@
       <hr class="section-line">
     </div>
 
-    <div class="day-card travel">
+    <div class="day-card travel" reveal>
       <div class="day-aside">
         <div class="day-num">25</div>
         <div class="day-month">7月</div>
@@ -900,7 +1049,7 @@
       <span style="font-size:12px;color:var(--ink-muted);white-space:nowrap">7/25 – 7/29 · 4晚 / 遊覽3天</span>
     </div>
 
-    <div class="day-card kyoto">
+    <div class="day-card kyoto" reveal>
       <div class="day-aside">
         <div class="day-num">26</div>
         <div class="day-month">7月</div>
@@ -921,7 +1070,7 @@
       </div>
     </div>
 
-    <div class="day-card kyoto">
+    <div class="day-card kyoto" reveal>
       <div class="day-aside">
         <div class="day-num">27</div>
         <div class="day-month">7月</div>
@@ -945,7 +1094,7 @@
       </div>
     </div>
 
-    <div class="day-card kyoto">
+    <div class="day-card kyoto" reveal>
       <div class="day-aside">
         <div class="day-num">28</div>
         <div class="day-month">7月</div>
@@ -970,7 +1119,7 @@
       </div>
     </div>
 
-    <div class="day-card travel">
+    <div class="day-card travel" reveal>
       <div class="day-aside">
         <div class="day-num">29</div>
         <div class="day-month">7月</div>
@@ -1003,7 +1152,7 @@
     </div>
 
     <div class="hotel-grid">
-      <div class="hotel-card">
+      <div class="hotel-card reveal">
         <div class="hotel-badge osaka">大阪</div>
         <div class="hotel-name"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=ESLEAD+HOTEL+Osaka+Nipponbashi" target="_blank" rel="noopener">ESLEAD HOTEL Osaka Nipponbashi</a></div>
         <div class="hotel-meta">
@@ -1013,7 +1162,7 @@
         </div>
         <div class="hotel-price">¥83,993</div>
       </div>
-      <div class="hotel-card">
+      <div class="hotel-card reveal">
         <div class="hotel-badge kyoto">京都</div>
         <div class="hotel-name"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=RESI+STAY+HEART+Kyoto" target="_blank" rel="noopener">RESI STAY HEART</a></div>
         <div class="hotel-meta">
@@ -1035,7 +1184,7 @@
     </div>
 
     <div class="reminder-grid">
-      <div class="reminder-card">
+      <div class="reminder-card reveal">
         <div class="reminder-card-label">票券狀態</div>
         <div class="reminder-item">
           <div class="reminder-icon r-info">✓</div>
@@ -1053,7 +1202,7 @@
         </div>
       </div>
 
-      <div class="reminder-card">
+      <div class="reminder-card reveal">
         <div class="reminder-card-label">提前預約事項</div>
         <div class="reminder-item">
           <div class="reminder-icon r-info">📋</div>
@@ -1064,7 +1213,7 @@
         </div>
       </div>
 
-      <div class="reminder-card full">
+      <div class="reminder-card full reveal">
         <div class="reminder-card-label">行李配置（Tiger Air）</div>
         <div class="reminder-item">
           <div class="reminder-icon r-info">🧳</div>
@@ -1085,19 +1234,19 @@
       <hr class="section-line">
     </div>
     <div class="reminder-grid">
-      <div class="reminder-card">
+      <div class="reminder-card reveal">
         <div class="reminder-card-label">USJ</div>
         <div class="list">
           <div><a class="map-link" href="https://www.usj.co.jp/web/en/us/tickets" target="_blank" rel="noopener">USJ 官方票券頁</a>　/　<a class="map-link" href="https://www.kkday.com/en/product/2247-universal-studios-japan-ticket-osaka" target="_blank" rel="noopener">KKday 頁面</a></div>
         </div>
       </div>
-      <div class="reminder-card">
+      <div class="reminder-card reveal">
         <div class="reminder-card-label">嵐山小火車</div>
         <div class="list">
           <div><a class="map-link" href="https://www.sagano-kanko.co.jp/en/faq/faq_category/reservation/" target="_blank" rel="noopener">嵯峨野小火車官方預約頁</a>　/　<a class="map-link" href="https://www.klook.com/activity/17066-sagano-romantic-train-ticket-kyoto/" target="_blank" rel="noopener">Klook 頁面</a></div>
         </div>
       </div>
-      <div class="reminder-card full">
+      <div class="reminder-card full reveal">
         <div class="reminder-card-label">京都鐵道博物館</div>
         <div class="list">
           <div><a class="map-link" href="https://www.kyotorailwaymuseum.jp/en/tickets/" target="_blank" rel="noopener">京都鐵道博物館官方票券頁</a>　/　<a class="map-link" href="https://www.kkday.com/en/product/123551-kyoto-railway-museum-tickets-japan" target="_blank" rel="noopener">KKday 頁面</a>　/　<a class="map-link" href="https://www.kyotorailwaymuseum.jp/en/enjoy/experience/" target="_blank" rel="noopener">體驗項目頁</a></div>
@@ -1177,7 +1326,7 @@
   </section>
 
   <section class="section" id="credits-note">
-    <div class="reminder-card full" style="margin-top:8px">
+    <div class="reminder-card full reveal" style="margin-top:8px">
       <div class="list">
         <div><strong>圖片來源與授權：</strong>請見 <a class="map-link" href="details.html#credits">details 頁</a></div>
       </div>
@@ -1193,7 +1342,6 @@
 </footer>
 
 <script>
-  // === COUNTDOWN TIMER ===
   function updateCountdown() {
     const target = new Date('2026-07-20T06:40:00+08:00');
     const now = new Date();
@@ -1202,20 +1350,67 @@
       document.getElementById('countdown').innerHTML = '<span style="color:var(--kyoto);font-family:\'DM Serif Display\',serif;font-size:20px">✈️ 出發了！旅途愉快！</span>';
       return;
     }
-    const days = Math.floor(diff / 86400000);
+    const days  = Math.floor(diff / 86400000);
     const hours = Math.floor((diff % 86400000) / 3600000);
-    const mins = Math.floor((diff % 3600000) / 60000);
-    document.getElementById('cd-days').textContent = String(days).padStart(2,'0');
-    document.getElementById('cd-hours').textContent = String(hours).padStart(2,'0');
-    document.getElementById('cd-mins').textContent = String(mins).padStart(2,'0');
+    const mins  = Math.floor((diff % 3600000) / 60000);
+    const secs  = Math.floor((diff % 60000) / 1000);
+    const setFlip = (id, val) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const padded = String(val).padStart(2, '0');
+      if (el.textContent !== padded) {
+        el.textContent = padded;
+        const card = el.closest('.flip-card');
+        if (card) {
+          card.classList.remove('flip');
+          void card.offsetWidth;
+          card.classList.add('flip');
+        }
+      }
+    };
+    setFlip('cd-days', days);
+    setFlip('cd-hours', hours);
+    setFlip('cd-mins', mins);
+    setFlip('cd-secs', secs);
   }
   updateCountdown();
-  setInterval(updateCountdown, 30000);
+  setInterval(updateCountdown, 1000);
 
-  // Active nav tab highlight on scroll
+  (function() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  })();
+
+  (async function() {
+    const urls = [
+      'https://api.open-meteo.com/v1/forecast?latitude=34.6937&longitude=135.5023&current_weather=true&timezone=Asia/Tokyo',
+      'https://api.open-meteo.com/v1/forecast?latitude=35.0116&longitude=135.7681&current_weather=true&timezone=Asia/Tokyo'
+    ];
+    const wm = {0:'☀️',1:'🌤️',2:'⛅',3:'☁️',45:'🌫️',48:'🌫️',51:'🌦️',53:'🌦️',55:'🌧️',61:'🌧️',63:'🌧️',65:'🌧️',80:'🌦️',81:'🌧️',82:'🌧️',95:'⛈️',96:'⛈️',99:'⛈️'};
+    try {
+      const [o, k] = await Promise.all(urls.map(u => fetch(u).then(r => r.json())));
+      const r = (d, ti, di) => {
+        const w = d.current_weather;
+        document.getElementById(ti).textContent = Math.round(w.temperature);
+        document.getElementById(di).textContent = (wm[w.weathercode]||'🌈') + ' · 風 ' + w.windspeed + ' km/h';
+      };
+      r(o, 'wt-osaka-temp', 'wt-osaka-desc');
+      r(k, 'wt-kyoto-temp', 'wt-kyoto-desc');
+    } catch(e) {
+      document.getElementById('wt-osaka-desc').textContent = '⚠️ 載入失敗';
+      document.getElementById('wt-kyoto-desc').textContent = '⚠️ 載入失敗';
+    }
+  })();
+
   const sections = ['osaka','move','kyoto','hotels','reminders','budget'];
   const tabs = document.querySelectorAll('.nav-tab');
-
   function updateActive() {
     const scrollY = window.scrollY + 80;
     let current = sections[0];
@@ -1229,7 +1424,6 @@
       if (href === current) t.classList.add('active');
     });
   }
-
   window.addEventListener('scroll', updateActive, { passive: true });
   updateActive();
 </script>
