@@ -821,6 +821,35 @@
   .weather-bar { flex-direction: column; gap: 10px; }
 }
 
+
+/* Portal home button */
+.portal-home {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(26,22,18,0.7);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(196,84,26,0.2);
+  color: rgba(196,132,90,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.portal-home:hover {
+  background: rgba(196,84,26,0.15);
+  border-color: rgba(196,84,26,0.4);
+  color: #e8b888;
+  box-shadow: 0 0 20px rgba(196,84,26,0.15);
+}
+
 </style>
 </head>
 <body>
@@ -961,6 +990,7 @@
           <span class="dot-item">中午可回飯店休息一下</span>
           <span class="dot-item">晚上：道頓堀 + 心齋橋逛街</span>
           <span class="dot-item"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Takoyaki+making+experience+Dotonbori" target="_blank" rel="noopener">章魚燒製作體驗</a>（道頓堀，需提前預約）</span>
+          <span class="dot-item">🍢 <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=道頓堀くくる+コナモンミュージアム+大阪" target="_blank" rel="noopener">道頓堀くくる コナモンミュージアム</a> — 章魚燒名店，道頓堀經典口味（📍 道頓堀1-6-12／各站步行4-12分）</span>
           <span class="dot-item">定位：大阪代表景點日</span>
         </div>
       </div>
@@ -1428,5 +1458,6 @@
   updateActive();
 </script>
 
+<a href="https://c0h3i3n.github.io/" class="portal-home" title="Portal">◈</a>
 </body>
 </html>
