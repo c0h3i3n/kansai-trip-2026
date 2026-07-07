@@ -74,6 +74,22 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--paper);color:var(--i
 .pillrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
 .pill{font-size:12px;border-radius:999px;padding:4px 12px;background:var(--paper-warm);color:var(--ink-soft);border:1px solid rgba(0,0,0,.06)}
 
+/* DAILY DETAIL */
+.daily-stack{display:grid;gap:18px}
+.day-detail{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:var(--shadow);border-left:4px solid var(--blue)}
+.day-detail.osaka{border-left-color:var(--osaka)}
+.day-detail.kyoto{border-left-color:var(--kyoto)}
+.day-detail.travel{border-left-color:#888}
+.day-detail h3{font-family:'Noto Serif TC',serif;font-size:18px;margin:0 0 12px;color:var(--ink)}
+.day-detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:12px}
+.detail-box{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px}
+.detail-box h4{font-size:13px;margin-bottom:8px;color:var(--ink);letter-spacing:.04em}
+.detail-box ul{padding-left:18px;display:grid;gap:6px}
+.detail-box li{font-size:13px;color:var(--ink-soft);line-height:1.6}
+.time-list{display:grid;gap:7px}
+.time-list div{font-size:13px;color:var(--ink-soft);line-height:1.55}
+.time-list strong{display:inline-block;min-width:86px;color:var(--ink)}
+
 /* TABLE */
 table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow)}
 th,td{padding:13px 16px;border-bottom:1px solid var(--line);text-align:left;font-size:14px;vertical-align:top}
@@ -86,6 +102,7 @@ tr:hover td{background:rgba(0,0,0,.015)}
 
 @media(max-width:720px){
   .cards,.subgrid{grid-template-columns:1fr}
+  .day-detail-grid{grid-template-columns:1fr}
   th,td{font-size:13px;padding:11px 13px}
   .wrap{padding:32px 16px 60px}
 }
@@ -117,6 +134,7 @@ tr:hover td{background:rgba(0,0,0,.015)}
   <a href="#flights">航班</a>
   <a href="#hotels-detail">住宿</a>
   <a href="#tickets">票券</a>
+  <a href="#daily-detail">每日攻略</a>
   <a href="#transport">交通</a>
   <a href="#backup">備案</a>
   <a href="#credits">圖片授權</a>
@@ -253,6 +271,337 @@ tr:hover td{background:rgba(0,0,0,.015)}
 </table>
 </section>
 
+<section class="section" id="daily-detail">
+<div class="section-head"><div class="dot" style="background:#C4541A"></div><h2 class="section-title">每日詳細攻略</h2><hr class="line"></div>
+<div class="daily-stack">
+
+<article class="day-detail osaka">
+<span class="tag osaka">7/20 週一 · 抵達大阪 + USJ 半天</span>
+<h3>目標：順利入境、放好行李、輕鬆進 USJ 熟悉環境</h3>
+<div class="day-detail-grid">
+<div class="detail-box"><h4>保守時間表</h4><div class="time-list">
+<div><strong>03:40</strong>抵達桃園機場 T1，辦理報到 / 托運</div>
+<div><strong>06:40</strong>TPE 起飛</div>
+<div><strong>10:25</strong>抵達 KIX T1，入境、領行李、上廁所</div>
+<div><strong>12:00</strong>離開機場，往大阪市區 / 飯店方向</div>
+<div><strong>13:30</strong>抵達 ESLEAD HOTEL 附近，寄放行李或辦理入住</div>
+<div><strong>14:00</strong>簡單午餐，補水，整理 USJ 票券與行動電源</div>
+<div><strong>15:00</strong>入園 USJ，主攻哈利波特區與拍照</div>
+<div><strong>19:30</strong>視體力離園，回飯店休息</div>
+</div></div>
+<div class="detail-box"><h4>注意事項</h4><ul>
+<li>第一天不要把 USJ 當衝設施日，重點是熟悉園區、拍照、吃主題餐。</li>
+<li>若入境或交通延誤，USJ 可以延到 16:00 後再入園，不需要硬趕。</li>
+<li>出發前把 USJ QR code、飯店地址、機票截圖存離線。</li>
+<li>抵達 KIX 後先確認網路能用，再移動。</li>
+</ul></div>
+<div class="detail-box"><h4>刪減順序</h4><ul>
+<li>若小孩累：USJ 只進哈利波特區拍照 + 逛商店。</li>
+<li>若大人累：晚餐不要排餐廳，回飯店附近便利商店 / 外帶。</li>
+<li>若航班延誤很久：取消 USJ 半天，保留隔天全天主力。</li>
+</ul></div>
+<div class="detail-box"><h4>必帶 / 必查</h4><ul>
+<li>護照、機票、USJ 票券、飯店確認資料。</li>
+<li>行動電源、兒童水壺、濕紙巾、薄外套。</li>
+<li>行李先以能快速拿出護照、票券、充電線為原則整理。</li>
+</ul></div>
+</div>
+</article>
+
+<article class="day-detail osaka">
+<span class="tag osaka">7/21 週二 · USJ 全天</span>
+<h3>目標：用 Express Pass 把重點設施穩穩玩完，不在園區熱到崩潰</h3>
+<div class="day-detail-grid">
+<div class="detail-box"><h4>保守時間表</h4><div class="time-list">
+<div><strong>07:00</strong>起床、吃早餐、確認票券與 App</div>
+<div><strong>07:45</strong>從飯店出發前往 USJ</div>
+<div><strong>08:30</strong>抵達園區外，依現場開園時間排隊</div>
+<div><strong>上午</strong>先玩非 Express 但熱門的設施 / 哈利波特補強</div>
+<div><strong>11:00</strong>提早午餐，避開 12:00–13:00 人潮</div>
+<div><strong>下午</strong>依 Express Pass 時段跑重點設施</div>
+<div><strong>15:00</strong>安排室內休息、補水、買紀念品</div>
+<div><strong>18:00</strong>晚餐或離園，依小孩體力決定是否看夜間氛圍</div>
+</div></div>
+<div class="detail-box"><h4>注意事項</h4><ul>
+<li>Express Pass 指定時段是當天最高優先級，其他安排都要讓路。</li>
+<li>7 月園區很熱，補水與室內休息要當成正式行程。</li>
+<li>哈利波特與侏羅紀是主軸，其他區域當加分。</li>
+<li>能量手環、魔杖可現場買，不需要第一時間衝商店。</li>
+</ul></div>
+<div class="detail-box"><h4>刪減順序</h4><ul>
+<li>先刪排隊過長、沒有 Express 的設施。</li>
+<li>再刪大人想逛的商店，保留小孩最期待的區域。</li>
+<li>若下午太累，晚餐後直接回飯店，不硬等夜間。</li>
+</ul></div>
+<div class="detail-box"><h4>必帶 / 必查</h4><ul>
+<li>USJ App、所有 QR code、Express Pass 截圖。</li>
+<li>帽子、防曬、涼感巾、行動電源。</li>
+<li>前一晚先截圖園區地圖與 Express Pass 時段。</li>
+</ul></div>
+</div>
+</article>
+
+<article class="day-detail osaka">
+<span class="tag osaka">7/22 週三 · 大阪城 + 章魚燒體驗 + 道頓堀</span>
+<h3>目標：上午看大阪代表景點，下午準時抵達 16:00 章魚燒體驗</h3>
+<div class="day-detail-grid">
+<div class="detail-box"><h4>保守時間表</h4><div class="time-list">
+<div><strong>08:30</strong>起床，視 USJ 疲勞狀況慢慢出門</div>
+<div><strong>09:30</strong>前往大阪城</div>
+<div><strong>10:15</strong>大阪城公園 / 天守閣，停留 1.5–2 小時</div>
+<div><strong>12:30</strong>午餐，避免吃太飽</div>
+<div><strong>13:30</strong>回飯店休息、補眠、洗汗</div>
+<div><strong>15:15</strong>從飯店出發前往道頓堀</div>
+<div><strong>15:40</strong>抵達道頓堀くくる コナモンミュージアム B1 附近</div>
+<div><strong>16:00</strong>章魚燒製作體驗（2 名）</div>
+<div><strong>17:00</strong>體驗結束，散步道頓堀 / 心齋橋</div>
+</div></div>
+<div class="detail-box"><h4>注意事項</h4><ul>
+<li>章魚燒體驗已預約，16:00 不能遲到；15:40 抵達最安心。</li>
+<li>體驗內容每人 15 顆 + 大章魚燒 2 顆，晚餐請排輕一點。</li>
+<li>現場現金付款 ¥7,700，請準備現金。</li>
+<li>店家電話：080-9062-3080；若真的會遲到，直接聯絡店家。</li>
+</ul></div>
+<div class="detail-box"><h4>刪減順序</h4><ul>
+<li>若早上太累：大阪城只看外觀與公園，不登天守閣。</li>
+<li>若天氣太熱：大阪城縮短，拉長飯店休息時間。</li>
+<li>道頓堀逛街可短可長，不要影響隔天海遊館。</li>
+</ul></div>
+<div class="detail-box"><h4>必帶 / 必查</h4><ul>
+<li>Jalan 確認信截圖、現金、店家地址。</li>
+<li>濕紙巾、兒童水壺、行動電源。</li>
+<li>出門前再次確認從飯店到道頓堀的步行 / 地鐵時間。</li>
+</ul></div>
+</div>
+</article>
+
+<article class="day-detail osaka">
+<span class="tag osaka">7/23 週四 · 海遊館 + 天保山</span>
+<h3>目標：USJ 後的恢復日，用大型室內水族館穩定親子節奏</h3>
+<div class="day-detail-grid">
+<div class="detail-box"><h4>保守時間表</h4><div class="time-list">
+<div><strong>09:00</strong>起床，慢慢早餐</div>
+<div><strong>10:00</strong>出發前往大阪港 / 天保山</div>
+<div><strong>11:00</strong>進海遊館，依館內動線慢慢走</div>
+<div><strong>13:00</strong>天保山附近午餐</div>
+<div><strong>14:00</strong>摩天輪 / 商場 / 休息，視天氣決定</div>
+<div><strong>15:30</strong>回飯店或回難波附近輕鬆晚餐</div>
+</div></div>
+<div class="detail-box"><h4>注意事項</h4><ul>
+<li>這天是恢復體力用，不要追加遠景點。</li>
+<li>海遊館比京都水族館更有代表性，水族館主菜放這天即可。</li>
+<li>若現場排隊長，可先吃飯再入館或改線上購票。</li>
+</ul></div>
+<div class="detail-box"><h4>刪減順序</h4><ul>
+<li>先刪摩天輪與商場，保留海遊館。</li>
+<li>若小孩累，下午直接回飯店。</li>
+<li>晚餐不排預約餐廳，保留彈性。</li>
+</ul></div>
+<div class="detail-box"><h4>必帶 / 必查</h4><ul>
+<li>海遊館營業時間、當日票券狀況。</li>
+<li>薄外套，館內冷氣可能較強。</li>
+<li>孩子如果會暈車，搭車前不要吃太多。</li>
+</ul></div>
+</div>
+</article>
+
+<article class="day-detail osaka">
+<span class="tag osaka">7/24 週五 · Kids Plaza + Pokémon / 梅田</span>
+<h3>目標：大阪最後彈性日，讓小孩有放電空間，大人不要排滿</h3>
+<div class="day-detail-grid">
+<div class="detail-box"><h4>保守時間表</h4><div class="time-list">
+<div><strong>09:00</strong>早餐、整理部分行李</div>
+<div><strong>10:00</strong>前往 Kids Plaza Osaka</div>
+<div><strong>10:30</strong>Kids Plaza 主活動，讓小孩充分玩</div>
+<div><strong>12:30</strong>午餐</div>
+<div><strong>14:00</strong>視體力前往 Pokémon Center / 梅田</div>
+<div><strong>16:30</strong>回飯店休息，整理隔天移動京都的行李</div>
+<div><strong>晚上</strong>大阪最後晚餐，避免太晚睡</div>
+</div></div>
+<div class="detail-box"><h4>注意事項</h4><ul>
+<li>隔天要換飯店，晚上務必整理行李，不要拖到隔天早上。</li>
+<li>Kids Plaza 是主菜，Pokémon / 梅田是加分，不是必跑。</li>
+<li>如果小孩在 Kids Plaza 玩得很開心，就不需要硬換場。</li>
+</ul></div>
+<div class="detail-box"><h4>刪減順序</h4><ul>
+<li>先刪梅田逛街。</li>
+<li>再刪 Pokémon Center。</li>
+<li>保留 Kids Plaza + 早回飯店整理行李。</li>
+</ul></div>
+<div class="detail-box"><h4>必帶 / 必查</h4><ul>
+<li>隔天京都住宿資訊、行李打包清單。</li>
+<li>孩子備用衣物與水壺。</li>
+<li>晚上確認大阪退房時間與京都入住方式。</li>
+</ul></div>
+</div>
+</article>
+
+<article class="day-detail travel">
+<span class="tag warn">7/25 週六 · 大阪退房 → 京都入住 + 清水寺 / 祇園</span>
+<h3>目標：搬飯店不要狼狽，清水寺只當京都開場，不硬排太滿</h3>
+<div class="day-detail-grid">
+<div class="detail-box"><h4>保守時間表</h4><div class="time-list">
+<div><strong>08:30</strong>起床、早餐、最後整理行李</div>
+<div><strong>10:00</strong>ESLEAD HOTEL 退房</div>
+<div><strong>10:30</strong>前往京都，行李多時優先考慮計程車到車站</div>
+<div><strong>12:00</strong>抵達京都站附近，午餐</div>
+<div><strong>13:30</strong>到 RESI STAY HEART 寄放行李 / 辦理入住流程</div>
+<div><strong>15:00</strong>搭計程車 / Uber Taxi 前往清水寺周邊</div>
+<div><strong>15:30</strong>清水寺、二寧坂、祇園散步</div>
+<div><strong>18:00</strong>晚餐後回飯店，不再加夜間景點</div>
+</div></div>
+<div class="detail-box"><h4>注意事項</h4><ul>
+<li>週六京都熱門區會擠，清水寺交通建議直接叫車。</li>
+<li>搬飯店日最怕行李卡住，景點要少，心情才會穩。</li>
+<li>若入住時間受限，先寄行李，晚上再完整整理房間。</li>
+</ul></div>
+<div class="detail-box"><h4>刪減順序</h4><ul>
+<li>先刪祇園深度散步。</li>
+<li>再刪二寧坂購物。</li>
+<li>最少保留：京都入住 + 清水寺短停 + 晚餐。</li>
+</ul></div>
+<div class="detail-box"><h4>必帶 / 必查</h4><ul>
+<li>兩間飯店地址、京都住宿入住方式、住宿稅現金。</li>
+<li>行李輪子狀況、雨具、孩子替換衣物。</li>
+<li>到京都後先確認回飯店路線，避免晚上迷路。</li>
+</ul></div>
+</div>
+</article>
+
+<article class="day-detail kyoto">
+<span class="tag kyoto">7/26 週日 · 伏見稻荷 + 錦市場 + 下午休息</span>
+<h3>目標：早去伏見稻荷避暑避人潮，中午吃錦市場，下午回飯店回復體力</h3>
+<div class="day-detail-grid">
+<div class="detail-box"><h4>保守時間表</h4><div class="time-list">
+<div><strong>06:30</strong>起床，簡單早餐</div>
+<div><strong>07:15</strong>從京都站附近搭 JR 前往伏見稻荷</div>
+<div><strong>07:45</strong>抵達伏見稻荷，走千本鳥居前段</div>
+<div><strong>09:30</strong>下山 / 回車站，補水休息</div>
+<div><strong>10:30</strong>前往錦市場</div>
+<div><strong>11:00</strong>錦市場逛吃，當午餐</div>
+<div><strong>13:30</strong>回飯店休息</div>
+<div><strong>晚上</strong>附近簡單晚餐，不排遠點</div>
+</div></div>
+<div class="detail-box"><h4>注意事項</h4><ul>
+<li>伏見稻荷不用攻頂，親子行程走前段鳥居就很有感。</li>
+<li>錦市場週日人潮可能多，保持隊形，約定集合點。</li>
+<li>下午休息是正式行程，為 7/27 小火車保留體力。</li>
+</ul></div>
+<div class="detail-box"><h4>刪減順序</h4><ul>
+<li>若太熱：伏見稻荷縮短，只拍鳥居前段。</li>
+<li>若錦市場太擠：改京都站附近午餐。</li>
+<li>晚上不加景點。</li>
+</ul></div>
+<div class="detail-box"><h4>必帶 / 必查</h4><ul>
+<li>水、帽子、防曬、涼感巾。</li>
+<li>伏見稻荷到錦市場的交通路線。</li>
+<li>現金零錢，錦市場小吃可能不一定都刷卡。</li>
+</ul></div>
+</div>
+</article>
+
+<article class="day-detail kyoto">
+<span class="tag kyoto">7/27 週一 · 嵯峨野小火車 + 嵐山</span>
+<h3>目標：不要走反方向；先到龜岡端搭小火車，再回嵐山散步</h3>
+<div class="day-detail-grid">
+<div class="detail-box"><h4>倒推時間表</h4><div class="time-list">
+<div><strong>T-120</strong>依票券指定班次，至少提前 2 小時從飯店準備出發</div>
+<div><strong>T-90</strong>離開 RESI STAY HEART，前往京都站</div>
+<div><strong>T-70</strong>搭 JR 往馬堀 / 龜岡方向</div>
+<div><strong>T-45</strong>抵達小火車龜岡站周邊，先找入口與廁所</div>
+<div><strong>T-30</strong>出示 E-ticket 到改札口確認 / 兌票</div>
+<div><strong>班次時間</strong>搭嵯峨野小火車：龜岡駅 → 嵯峨駅 / 嵐山駅</div>
+<div><strong>下車後</strong>竹林、渡月橋、午餐 / 甜點</div>
+<div><strong>15:00</strong>視體力回京都市區，不排猴子公園</div>
+</div></div>
+<div class="detail-box"><h4>注意事項</h4><ul>
+<li>票券方向是「龜岡 → 嵯峨 / 嵐山」，所以不要先去嵐山再想搭車。</li>
+<li>憑證不可直接搭車，當天要用 E-ticket 到改札口確認 / 兌票。</li>
+<li>小火車已購買大人 2 + 兒童 2，已付款 JPY 2,640。</li>
+<li>猴子公園預設刪除，避免爬坡透支體力。</li>
+</ul></div>
+<div class="detail-box"><h4>刪減順序</h4><ul>
+<li>小火車不可刪，已購票。</li>
+<li>竹林與渡月橋保留短版即可。</li>
+<li>若天氣太熱或下雨，午餐後直接回京都。</li>
+</ul></div>
+<div class="detail-box"><h4>必帶 / 必查</h4><ul>
+<li>E-ticket、手機電量、離線截圖。</li>
+<li>前一天晚上確認票券上的實際班次時間，再倒推出發。</li>
+<li>查好 JR 京都站到馬堀 / 龜岡方向的月台。</li>
+</ul></div>
+</div>
+</article>
+
+<article class="day-detail kyoto">
+<span class="tag kyoto">7/28 週二 · 金閣寺 + 京都鐵道博物館</span>
+<h3>目標：上午短戶外，下午室內避暑；京都水族館只當備案</h3>
+<div class="day-detail-grid">
+<div class="detail-box"><h4>保守時間表</h4><div class="time-list">
+<div><strong>08:30</strong>起床、早餐</div>
+<div><strong>09:30</strong>搭計程車 / Uber Taxi 前往金閣寺</div>
+<div><strong>10:00</strong>金閣寺，停留 45–60 分鐘</div>
+<div><strong>11:15</strong>離開金閣寺，前往京都站 / 梅小路方向</div>
+<div><strong>12:00</strong>午餐</div>
+<div><strong>13:00</strong>京都鐵道博物館，室內慢慢逛</div>
+<div><strong>16:00</strong>視體力離開，回飯店整理行李</div>
+<div><strong>晚上</strong>早點休息，準備隔天回程</div>
+</div></div>
+<div class="detail-box"><h4>注意事項</h4><ul>
+<li>金閣寺是戶外景點，7 月底不要停太久。</li>
+<li>鐵道博物館比京都水族館更不重複，且室內避暑能力好。</li>
+<li>京都水族館只當備案：如果小孩突然很想看海洋生物再改。</li>
+<li>晚上要整理回程行李，不要排晚間景點。</li>
+</ul></div>
+<div class="detail-box"><h4>刪減順序</h4><ul>
+<li>若太熱：金閣寺縮短到拍照 + 繞一圈。</li>
+<li>若小孩不想看鐵道：改京都水族館。</li>
+<li>若大人小孩都累：金閣寺後直接回飯店休息。</li>
+</ul></div>
+<div class="detail-box"><h4>必帶 / 必查</h4><ul>
+<li>京都鐵道博物館營業日與票券方式。</li>
+<li>回程行李清單，晚上打包不要漏。</li>
+<li>隔天 KIX 交通路線與 Haruka / JR 時刻。</li>
+</ul></div>
+</div>
+</article>
+
+<article class="day-detail travel">
+<span class="tag warn">7/29 週三 · 京都退房 → KIX → 回台</span>
+<h3>目標：不 delay；寧可早到機場，不賭交通</h3>
+<div class="day-detail-grid">
+<div class="detail-box"><h4>保守時間表</h4><div class="time-list">
+<div><strong>05:45</strong>起床，早餐以便利商店 / 車站簡單解決</div>
+<div><strong>06:15</strong>完成退房，確認護照 / 機票 / 行李</div>
+<div><strong>06:30</strong>離開 RESI STAY HEART，搭計程車前往京都站</div>
+<div><strong>06:50</strong>抵達京都站，預留買票 / 找月台時間</div>
+<div><strong>07:00–07:20</strong>搭 JR Haruka 或同等機場路線前往 KIX T1</div>
+<div><strong>08:20–08:40</strong>抵達 KIX T1，辦理 check-in / 托運行李</div>
+<div><strong>10:30</strong>前到登機門</div>
+<div><strong>11:15</strong>KIX 起飛回台</div>
+</div></div>
+<div class="detail-box"><h4>注意事項</h4><ul>
+<li>回程日不加任何景點，不買早餐名店，不排伴手禮店。</li>
+<li>前一晚把護照、錢包、手機、票券、行動電源放在同一個隨身包。</li>
+<li>如果早上叫車不順，立刻改步行 / 地鐵到京都站，不要等太久。</li>
+<li>目標 8:30 前到 KIX T1，這樣就算排隊也還有緩衝。</li>
+</ul></div>
+<div class="detail-box"><h4>刪減順序</h4><ul>
+<li>刪早餐餐廳。</li>
+<li>刪京都站伴手禮。</li>
+<li>刪機場慢慢逛，先完成 check-in、托運、安檢。</li>
+</ul></div>
+<div class="detail-box"><h4>必帶 / 必查</h4><ul>
+<li>護照、機票、住宿退房確認、交通 IC 卡 / 現金。</li>
+<li>前一晚確認 Haruka / JR 班次與京都站月台。</li>
+<li>行李秤重，托運 20kg 與隨身限制不要超。</li>
+</ul></div>
+</div>
+</article>
+
+</div>
+</section>
+
 <section class="section" id="transport">
 <div class="section-head"><div class="dot" style="background:#2A7A5A"></div><h2 class="section-title">交通備註</h2><hr class="line"></div>
 <table>
@@ -325,7 +674,7 @@ tr:hover td{background:rgba(0,0,0,.015)}
 </div>
 </main>
 <script>
-  const detailSections = ['flights','hotels-detail','tickets','transport','backup','credits'];
+  const detailSections = ['flights','hotels-detail','tickets','daily-detail','transport','backup','credits'];
   const detailTabs = document.querySelectorAll('.sticky-nav a');
   function updateDetailNav() {
     const scrollY = window.scrollY + 80;
