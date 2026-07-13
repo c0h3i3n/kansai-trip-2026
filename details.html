@@ -90,6 +90,20 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--paper);color:var(--i
 .time-list div{font-size:13px;color:var(--ink-soft);line-height:1.55}
 .time-list strong{display:inline-block;min-width:86px;color:var(--ink)}
 
+/* KEY TRANSPORT ROUTES */
+.route-intro{font-size:13px;color:var(--ink-muted);margin:-8px 0 16px;line-height:1.7}
+.route-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px}
+.route-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:17px 18px;box-shadow:var(--shadow);border-left:4px solid var(--blue)}
+.route-card.osaka{border-left-color:var(--osaka)}
+.route-card.kyoto{border-left-color:var(--kyoto)}
+.route-card.travel{border-left-color:#888}
+.route-date{font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--ink-muted);margin-bottom:5px}
+.route-card h3{font-family:'Noto Serif TC',serif;font-size:16px;margin:0 0 10px;color:var(--ink)}
+.route-path{font-size:13px;font-weight:600;color:var(--ink);line-height:1.75;margin-bottom:8px}
+.route-path .arrow{color:var(--ink-muted);padding:0 3px}
+.route-meta{font-size:12px;color:var(--ink-soft);line-height:1.7}
+.route-note{margin-top:8px;padding:8px 10px;border-radius:8px;background:var(--paper-warm);font-size:12px;color:var(--ink-soft);line-height:1.6}
+
 /* TABLE */
 table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow)}
 .table-wrap{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:16px}
@@ -105,6 +119,7 @@ tr:hover td{background:rgba(0,0,0,.015)}
 @media(max-width:720px){
   .cards,.subgrid{grid-template-columns:1fr}
   .day-detail-grid{grid-template-columns:1fr}
+  .route-grid{grid-template-columns:1fr}
   th,td{font-size:13px;padding:11px 13px}
   .wrap{padding:32px 16px 60px}
 }
@@ -335,10 +350,10 @@ tr:hover td{background:rgba(0,0,0,.015)}
 <div><strong>04:20</strong>預估抵達桃園機場 T1，辦理報到 / 托運</div>
 <div><strong>06:40</strong>TPE 起飛</div>
 <div><strong>10:25</strong>抵達 KIX T1，入境、領行李、上廁所</div>
-<div><strong>12:00</strong>離開機場，往大阪市區 / 飯店方向</div>
+<div><strong>12:00</strong>南海 Rapi:t 至天下茶屋，轉大阪 Metro 堺筋線至恵美須町</div>
 <div><strong>13:30</strong>抵達 ESLEAD HOTEL 附近，優先使用 lobby 自助行李寄放；正式入住時間為 16:00 起，不假設可提前進房</div>
 <div><strong>14:00</strong>簡單午餐，補水，整理 USJ 票券與行動電源</div>
-<div><strong>14:30 起</strong>視通關與交通狀況前往 USJ，目標 15:00–16:00 入園</div>
+<div><strong>14:30 起</strong>恵美須町 → 近鐵日本橋 → 西九条 → Universal City，目標 15:00–16:00 入園</div>
 <div><strong>15:00–16:00</strong>依實際抵達時間入園 USJ，主攻哈利波特區與拍照</div>
 <div><strong>19:30</strong>視體力離園，回飯店休息</div>
 </div></div>
@@ -373,7 +388,7 @@ tr:hover td{background:rgba(0,0,0,.015)}
 <div class="day-detail-grid">
 <div class="detail-box"><h4>保守時間表</h4><div class="time-list">
 <div><strong>07:00</strong>起床、吃早餐、確認票券與 App</div>
-<div><strong>07:45</strong>從飯店出發前往 USJ</div>
+<div><strong>07:45</strong>沿用 Day 1 路線：恵美須町 → 近鐵日本橋 → 西九条 → Universal City</div>
 <div><strong>08:30</strong>抵達園區外，依現場開園時間排隊</div>
 <div><strong>上午</strong>先玩非 Express 但熱門的設施 / 哈利波特補強</div>
 <div><strong>11:00</strong>提早午餐，避開 12:00–13:00 人潮</div>
@@ -440,7 +455,7 @@ tr:hover td{background:rgba(0,0,0,.015)}
 <div class="day-detail-grid">
 <div class="detail-box"><h4>保守時間表</h4><div class="time-list">
 <div><strong>08:00</strong>起床，簡單早餐，確認海遊館 QR code</div>
-<div><strong>08:45</strong>出發前往大阪港 / 天保山</div>
+<div><strong>08:20</strong>恵美須町 → 堺筋本町，轉中央線至大阪港 C11</div>
 <div><strong>09:15</strong>抵達海遊館附近，找入口、上廁所</div>
 <div><strong>09:30</strong>海遊館入館時段開始（09:30-09:45）</div>
 <div><strong>12:00</strong>天保山附近午餐</div>
@@ -506,7 +521,7 @@ tr:hover td{background:rgba(0,0,0,.015)}
 <div class="detail-box"><h4>保守時間表</h4><div class="time-list">
 <div><strong>08:30</strong>起床、早餐、最後整理行李</div>
 <div><strong>10:00</strong>ESLEAD HOTEL 退房</div>
-<div><strong>10:30</strong>前往京都，行李多時優先考慮計程車到車站</div>
+<div><strong>10:30</strong>計程車到 JR 大阪站，搭 JR 京都線新快速前往京都站</div>
 <div><strong>12:00</strong>抵達京都站附近，午餐</div>
 <div><strong>12:30</strong>在 JR 綠色窗口 / 綠色售票機領取已購買的 7/29 HARUKA 5 實體票</div>
 <div><strong>13:30</strong>到 RESI STAY HEART 依入住說明寄放行李 / 辦理入住流程；房間尚未可進就先寄放行李</div>
@@ -542,10 +557,10 @@ tr:hover td{background:rgba(0,0,0,.015)}
 <div class="day-detail-grid">
 <div class="detail-box"><h4>保守時間表</h4><div class="time-list">
 <div><strong>06:30</strong>起床，簡單早餐</div>
-<div><strong>07:15</strong>從京都站附近搭 JR 前往伏見稻荷</div>
+<div><strong>07:15</strong>京都站搭 JR 奈良線普通車 2 站至稻荷站</div>
 <div><strong>07:45</strong>抵達伏見稻荷，走千本鳥居前段</div>
 <div><strong>09:30</strong>下山 / 回車站，補水休息</div>
-<div><strong>10:30</strong>前往錦市場</div>
+<div><strong>10:30</strong>JR 普通車回京都站，轉地鐵烏丸線至四条站，步行到錦市場</div>
 <div><strong>11:00</strong>錦市場逛吃，當午餐</div>
 <div><strong>13:30</strong>回飯店休息</div>
 <div><strong>晚上</strong>附近簡單晚餐，不排遠點</div>
@@ -574,7 +589,7 @@ tr:hover td{background:rgba(0,0,0,.015)}
 <div class="day-detail-grid">
 <div class="detail-box"><h4>保守時間表</h4><div class="time-list">
 <div><strong>08:20</strong>從 RESI STAY HEART 出發前往京都站</div>
-<div><strong>08:45</strong>搭 JR 嵯峨野線前往馬堀站</div>
+<div><strong>08:45</strong>搭 JR 嵯峨野線普通車前往馬堀站</div>
 <div><strong>09:30 左右</strong>抵達 JR 馬堀站，步行約 10 分鐘到トロッコ亀岡駅</div>
 <div><strong>10:10 前</strong>抵達小火車龜岡站，找入口、上廁所並開啟 E-ticket</div>
 <div><strong>10:30</strong>搭嵯峨野4號：トロッコ亀岡 → トロッコ嵯峨</div>
@@ -611,7 +626,7 @@ tr:hover td{background:rgba(0,0,0,.015)}
 <div><strong>08:30</strong>從 RESI STAY HEART 叫計程車 / Uber Taxi 前往金閣寺</div>
 <div><strong>08:55</strong>抵達金閣寺門口，準備 09:00 開門第一波入場</div>
 <div><strong>09:00</strong>金閣寺，停留約 45–60 分鐘</div>
-<div><strong>10:00</strong>離開金閣寺，前往梅小路 / 京都鐵道博物館方向</div>
+<div><strong>10:00</strong>離開金閣寺，直接叫計程車前往京都鐵道博物館</div>
 <div><strong>10:45</strong>抵達梅小路 / 京都鐵道博物館周邊</div>
 <div><strong>11:00</strong>京都鐵道博物館，先確認 SL / 體驗項目時間</div>
 <div><strong>12:30</strong>館內或周邊午餐</div>
@@ -677,18 +692,64 @@ tr:hover td{background:rgba(0,0,0,.015)}
 
 <section class="section" id="transport">
 <div class="section-head"><div class="dot" style="background:#2A7A5A"></div><h2 class="section-title">交通備註</h2><hr class="line"></div>
-<div class="table-wrap">
-<table>
-<thead><tr><th>日期</th><th>交通重點</th><th>建議</th></tr></thead>
-<tbody>
-<tr><td>7/20</td><td>KIX → 大阪飯店 → USJ</td><td>到飯店寄放行李後，14:30 起視通關與交通狀況前往 USJ，目標 15:00–16:00 入園</td></tr>
-<tr><td>7/25</td><td>大阪 → 京都 → 清水寺</td><td>搬飯店日；抵達京都站時先領 7/29 HARUKA 5 實體票，再去寄放行李 / 清水寺</td></tr>
-<tr><td>7/26</td><td><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Kyoto+Station" target="_blank" rel="noopener">京都站附近</a> → <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Fushimi+Inari+Taisha" target="_blank" rel="noopener">伏見稻荷</a></td><td>以 JR 為主，不建議公車</td></tr>
-<tr><td>7/27</td><td>京都 → JR馬堀 → トロッコ亀岡 → トロッコ嵯峨</td><td>10:30 嵯峨野4號，4人連號指定席；QR 當日顯示，不要搭到 JR亀岡站</td></tr>
-<tr><td>7/28</td><td>RESI STAY HEART → 金閣寺</td><td>08:30 叫車，08:55 到金閣寺門口，09:00 開門第一波入場</td></tr>
-<tr><td>7/29</td><td>京都 → 關西機場</td><td>06:10 離開住宿，06:25–06:35 到京都站；06:44 HARUKA 5，08:19 抵達</td></tr>
-</tbody>
-</table>
+<p class="route-intro">只固定最容易出錯、帶行李或有預約時間的路段。一般市區移動仍以當天 Google Maps / 乘換案內為準，不綁死普通列車班次。</p>
+<div class="route-grid">
+  <article class="route-card osaka">
+    <div class="route-date">7/20 · 抵達大阪</div>
+    <h3>KIX → ESLEAD HOTEL</h3>
+    <div class="route-path">關西空港 <span class="arrow">→</span> 南海 Rapi:t <span class="arrow">→</span> 天下茶屋 <span class="arrow">→</span> 堺筋線 2 站 <span class="arrow">→</span> 恵美須町 K18</div>
+    <div class="route-meta">約 50–60 分鐘。飯店在 1-B 出口附近；若推大行李，優先跟電梯標誌出站再走地面。</div>
+    <div class="route-note"><a class="map-link" href="https://www.nankai.co.jp/en_railway/ticket/rapit" target="_blank" rel="noopener">Rapi:t 數位票</a>含南海乘車券與指定席：成人 ¥1,410、兒童 ¥710；南海段不用刷 ICOCA，轉大阪 Metro 後再刷。若下一班 Rapi:t 要等超過 20 分鐘，可改搭南海空港急行到天下茶屋，約慢 10 分鐘但無指定席。</div>
+  </article>
+  <article class="route-card osaka">
+    <div class="route-date">7/20–7/21 · USJ</div>
+    <h3>飯店 ↔ Universal City</h3>
+    <div class="route-path">恵美須町 <span class="arrow">→</span> 日本橋 / 近鐵日本橋 <span class="arrow">→</span> 西九条 <span class="arrow">→</span> JR ゆめ咲線 <span class="arrow">→</span> Universal City</div>
+    <div class="route-meta">約 30–40 分鐘，全部可刷 ICOCA。近鐵日本橋搭往大阪難波／尼崎方向的直通列車至西九条。</div>
+    <div class="route-note">Day 1 視通關時間 14:30 起出發；Day 2 於 07:45 出發。西九条務必轉 JR ゆめ咲線。</div>
+  </article>
+  <article class="route-card osaka">
+    <div class="route-date">7/23 · 09:30 海遊館預約</div>
+    <h3>飯店 → 海遊館</h3>
+    <div class="route-path">恵美須町 <span class="arrow">→</span> 堺筋本町 <span class="arrow">→</span> 中央線 <span class="arrow">→</span> 大阪港 C11 <span class="arrow">→</span> 步行至海遊館</div>
+    <div class="route-meta">08:20 從飯店出發，目標 09:15 前抵達。全程可刷 ICOCA，出站後步行約 8–10 分鐘。</div>
+    <div class="route-note">若當天地鐵延誤，海遊館固定入館時段優先，直接叫計程車。</div>
+  </article>
+  <article class="route-card travel">
+    <div class="route-date">7/25 · 搬飯店日</div>
+    <h3>大阪飯店 → 京都住宿</h3>
+    <div class="route-path">ESLEAD <span class="arrow">→</span> 計程車 <span class="arrow">→</span> JR 大阪站 <span class="arrow">→</span> JR 京都線新快速 <span class="arrow">→</span> 京都站</div>
+    <div class="route-meta">帶全部行李時採這條主路線，避免拖行李轉多次地鐵；JR 段可刷 ICOCA。</div>
+    <div class="route-note">抵達京都站先領 7/29 HARUKA 5 實體票，再依入住說明前往 RESI STAY 寄放行李。</div>
+  </article>
+  <article class="route-card kyoto">
+    <div class="route-date">7/26 · 伏見稻荷＋錦市場</div>
+    <h3>京都站 → 稻荷站 → 錦市場</h3>
+    <div class="route-path">京都站 <span class="arrow">→</span> JR 奈良線普通車 <span class="arrow">→</span> 稻荷站；回程至京都站 <span class="arrow">→</span> 地鐵烏丸線四条站</div>
+    <div class="route-meta">JR 與地鐵皆可刷 ICOCA。稻荷站就在神社入口；四条站下車後步行至錦市場。</div>
+    <div class="route-note">只搭停靠「稻荷站」的普通車，不要搭不停靠的快速列車，也不要誤到近鐵伏見站。</div>
+  </article>
+  <article class="route-card kyoto">
+    <div class="route-date">7/27 · 10:30 小火車固定班次</div>
+    <h3>京都站 → トロッコ亀岡</h3>
+    <div class="route-path">京都站 <span class="arrow">→</span> JR 嵯峨野線普通車 <span class="arrow">→</span> 馬堀站 <span class="arrow">→</span> 步行約 10 分鐘 <span class="arrow">→</span> トロッコ亀岡</div>
+    <div class="route-meta">08:20 離開住宿，10:10 前抵達入口。JR 段刷 ICOCA，小火車使用當日顯示的 E-ticket QR。</div>
+    <div class="route-note">不要搭到 JR 亀岡站，也不要先去嵐山；票券方向是龜岡端 → 嵯峨端。</div>
+  </article>
+  <article class="route-card kyoto">
+    <div class="route-date">7/28 · 金閣寺＋鐵道博物館</div>
+    <h3>住宿 → 金閣寺 → 鐵道博物館</h3>
+    <div class="route-path">08:30 住宿叫車 <span class="arrow">→</span> 08:55 金閣寺 <span class="arrow">→</span> 10:00 再叫車 <span class="arrow">→</span> 京都鐵道博物館</div>
+    <div class="route-meta">兩段都用計程車 / Uber Taxi，避免京都公車人潮與炎熱候車。</div>
+    <div class="route-note">目標 10:45 左右到梅小路區，11:00 進館後先確認 SL 與體驗項目時間。</div>
+  </article>
+  <article class="route-card travel">
+    <div class="route-date">7/29 · 回程固定班次</div>
+    <h3>RESI STAY → KIX T1</h3>
+    <div class="route-path">06:10 住宿叫車 <span class="arrow">→</span> 06:25–06:35 京都站 <span class="arrow">→</span> 06:44 HARUKA 5 <span class="arrow">→</span> 08:19 關西機場</div>
+    <div class="route-meta">使用 7/25 已領取的實體指定席票；抵達關西機場站後步行至 KIX T1。</div>
+    <div class="route-note">前一晚核對 4 張實體票、班次與當日月台；回程日不加景點。</div>
+  </article>
 </div>
 <div class="card blue-card" style="margin-top:14px">
 <span class="tag info">京都公車</span>
