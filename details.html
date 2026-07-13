@@ -92,6 +92,8 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--paper);color:var(--i
 
 /* TABLE */
 table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow)}
+.table-wrap{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:16px}
+.table-wrap table{min-width:680px}
 th,td{padding:13px 16px;border-bottom:1px solid var(--line);text-align:left;font-size:14px;vertical-align:top}
 tr:last-child td{border-bottom:none}
 th{background:var(--paper-warm);font-weight:700;color:var(--ink);font-size:12px;letter-spacing:.04em;text-transform:uppercase}
@@ -122,7 +124,7 @@ tr:hover td{background:rgba(0,0,0,.015)}
 
 </style>
 </head>
-<body>
+<body id="top">
 <header class="hero">
 <div class="eyebrow">Kansai Family Trip · Detailed Notes</div>
 <div class="title">關西親子遊 2026</div>
@@ -130,7 +132,7 @@ tr:hover td{background:rgba(0,0,0,.015)}
 <a class="back-link" href="./">← 返回主頁</a>
 </header>
 
-<nav class="sticky-nav" id="top">
+<nav class="sticky-nav">
   <a href="#flights">航班</a>
   <a href="#hotels-detail">住宿</a>
   <a href="#tickets">票券</a>
@@ -165,7 +167,7 @@ tr:hover td{background:rgba(0,0,0,.015)}
 <div><strong>抵達：</strong>13:10　<a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Taoyuan+International+Airport+Terminal+1" target="_blank" rel="noopener">TPE 桃園國際機場 T1</a></div>
 <div><strong>建議：</strong>回程日早上直接前往機場，不再加景點；目標 8:30 前抵達 KIX T1</div>
 <div><strong>保守時間表：</strong>05:30 起床 → 06:00 退房 → 06:10 離開住宿 → 06:25–06:35 京都站 → 06:44 HARUKA 5 → 08:19 抵達關西機場站</div>
-<div><strong>購票狀態：</strong>已購票，普通車指定席 4 號車 6A–6D；7/25 在京都站領取實體票</div>
+<div><strong>購票狀態：</strong>已購票，4 人連號普通車指定席；7/25 在京都站領取實體票</div>
 </div>
 </div>
 </div>
@@ -221,7 +223,7 @@ tr:hover td{background:rgba(0,0,0,.015)}
 <div><strong>電話：</strong>+81 75 353 7744</div>
 <div><strong>金額：</strong>房費 ¥76,137</div>
 <div><strong>住宿稅：</strong>¥3,200（現場另收；含住宿稅合計 ¥79,337）</div>
-<div><strong>確認事項：</strong>飯店已書面確認可住 2 大 2 小（9 歲、11 歲）</div>
+<div><strong>確認事項：</strong>飯店已書面確認 2 大 2 小的入住人數</div>
 </div>
 </div>
 </div>
@@ -249,7 +251,7 @@ tr:hover td{background:rgba(0,0,0,.015)}
 <div><strong>購票狀態：</strong>已購票，列印 / 電子憑證已取得</div>
 <div><strong>搭乘日：</strong>2026/7/27</div>
 <div><strong>班次：</strong>嵯峨野4號，10:30 トロッコ亀岡 → 10:56 トロッコ嵯峨</div>
-<div><strong>座位：</strong>4號車 16A、16B、16C、16D</div>
+<div><strong>座位：</strong>4 人連號指定席，座位詳見離線票券</div>
 <div><strong>人數：</strong>大人2（12歲以上）+ 兒童2（6-11歲）</div>
 <div><strong>金額：</strong>已付款 JPY 2,640</div>
 <div><strong>提醒：</strong>乘車 QR code 僅於 7/27 當日顯示；到改札口開啟原始 E-ticket 連結並出示乘車 QR code</div>
@@ -294,20 +296,21 @@ tr:hover td{background:rgba(0,0,0,.015)}
 <div><strong>購票狀態：</strong>已購票，信用卡已付款</div>
 <div><strong>班次：</strong>2026/7/29 HARUKA 5，06:44 京都 → 08:19 關西機場</div>
 <div><strong>人數：</strong>大人2 + 兒童2</div>
-<div><strong>座位：</strong>普通車指定席，4號車 6A、6B、6C、6D</div>
+<div><strong>座位：</strong>4 人連號普通車指定席，座位詳見離線票券</div>
 <div><strong>金額：</strong>合計 ¥6,600</div>
-<div><strong>領票：</strong>7/25 抵達京都站時依 JR-WEST 訂位確認信領取實體票；攜帶付款實體信用卡、訂位資料／4 位數認證碼與 4 人護照，領票後核對日期、HARUKA 5、4號車及6A–6D</div>
+<div><strong>領票：</strong>7/25 抵達京都站時依 JR-WEST 訂位確認信領取實體票；攜帶付款實體信用卡、訂位資料／4 位數認證碼與 4 人護照，領票後核對日期、HARUKA 5、車廂與座位是否和離線票券一致</div>
 </div>
 <div class="pillrow"><span class="pill">已購票</span><span class="pill">指定席</span><span class="pill">京都站領票</span></div>
 </div>
 
-<table style="margin-top:14px">
+<div class="table-wrap" style="margin-top:14px">
+<table>
 <thead><tr><th>景點</th><th>購票方式</th><th>備註</th></tr></thead>
 <tbody>
 <tr><td><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Universal+Studios+Japan" target="_blank" rel="noopener">USJ</a></td><td>已購買</td><td>出發前確認 QR code / App / 訂單截圖</td></tr>
 <tr><td><a class="map-link" href="https://www.jalan.net/kankou/spt_27128cb3542069322/activity/l00005C01E/" target="_blank" rel="noopener">道頓堀くくる章魚燒體驗</a></td><td>已預約</td><td>7/22 16:00-17:00，2名，現場現金付款 ¥7,700</td></tr>
-<tr><td><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Sagano+Romantic+Train" target="_blank" rel="noopener">嵐山小火車</a></td><td>已購買</td><td>7/27 10:30 トロッコ亀岡 → 10:56 トロッコ嵯峨；4號車16A–16D，QR 當日顯示</td></tr>
-<tr><td>HARUKA 京都 → KIX</td><td>已購買</td><td>7/29 06:44–08:19；4號車6A–6D，7/25 京都站領實體票</td></tr>
+<tr><td><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Sagano+Romantic+Train" target="_blank" rel="noopener">嵐山小火車</a></td><td>已購買</td><td>7/27 10:30 トロッコ亀岡 → 10:56 トロッコ嵯峨；4人連號指定席，QR 當日顯示</td></tr>
+<tr><td>HARUKA 京都 → KIX</td><td>已購買</td><td>7/29 06:44–08:19；4人連號指定席，7/25 京都站領實體票</td></tr>
 <tr><td><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Osaka+Castle" target="_blank" rel="noopener">大阪城</a></td><td>可現場買</td><td>親子可安排半天內</td></tr>
 <tr><td><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Kaiyukan+Osaka" target="_blank" rel="noopener">海遊館</a></td><td>已購買</td><td>7/23 09:30-09:45 入館；大人2 + 兒童2，已付款 ¥8,800；每人需出示 1 個 QR code</td></tr>
 <tr><td><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Kids+Plaza+Osaka" target="_blank" rel="noopener">Kids Plaza</a></td><td>可現場買</td><td>屬一般入館型</td></tr>
@@ -316,6 +319,7 @@ tr:hover td{background:rgba(0,0,0,.015)}
 <tr><td><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Kyoto+Railway+Museum" target="_blank" rel="noopener">京都鐵道博物館</a></td><td><a class="map-link" href="https://www.kyotorailwaymuseum.jp/en/tickets/" target="_blank" rel="noopener">官方票券頁</a> / <a class="map-link" href="https://www.kkday.com/en/product/123551-kyoto-railway-museum-tickets-japan" target="_blank" rel="noopener">KKday 頁面</a></td><td>親子很適合；模擬駕駛體驗請看 <a class="map-link" href="https://www.kyotorailwaymuseum.jp/en/enjoy/experience/" target="_blank" rel="noopener">體驗頁</a></td></tr>
 </tbody>
 </table>
+</div>
 </section>
 
 <section class="section" id="daily-detail">
@@ -327,20 +331,20 @@ tr:hover td{background:rgba(0,0,0,.015)}
 <h3>目標：順利入境、放好行李、輕鬆進 USJ 熟悉環境</h3>
 <div class="day-detail-grid">
 <div class="detail-box"><h4>保守時間表</h4><div class="time-list">
-<div><strong>03:50</strong>已預約 Uber，從林口星空樹出發前往桃園機場 T1（NT$796）</div>
+<div><strong>03:50</strong>已預約 Uber，從住家出發前往桃園機場 T1（NT$796）</div>
 <div><strong>04:20</strong>預估抵達桃園機場 T1，辦理報到 / 托運</div>
 <div><strong>06:40</strong>TPE 起飛</div>
 <div><strong>10:25</strong>抵達 KIX T1，入境、領行李、上廁所</div>
 <div><strong>12:00</strong>離開機場，往大阪市區 / 飯店方向</div>
 <div><strong>13:30</strong>抵達 ESLEAD HOTEL 附近，優先使用 lobby 自助行李寄放；正式入住時間為 16:00 起，不假設可提前進房</div>
 <div><strong>14:00</strong>簡單午餐，補水，整理 USJ 票券與行動電源</div>
-<div><strong>14:30</strong>前往 USJ 大門排隊，準備 1.5 日券 15:00 入園</div>
-<div><strong>15:00</strong>入園 USJ，主攻哈利波特區與拍照</div>
+<div><strong>14:30 起</strong>視通關與交通狀況前往 USJ，目標 15:00–16:00 入園</div>
+<div><strong>15:00–16:00</strong>依實際抵達時間入園 USJ，主攻哈利波特區與拍照</div>
 <div><strong>19:30</strong>視體力離園，回飯店休息</div>
 </div></div>
 <div class="detail-box"><h4>注意事項</h4><ul>
 <li>第一天不要把 USJ 當衝設施日，重點是熟悉園區、拍照、吃主題餐。</li>
-<li>1.5 日券是 15:00 後入園；14:30 到大門口排隊即可，不需要更早硬趕。</li>
+<li>1.5 日券是 15:00 後入園；14:30 起前往即可，若通關或交通延誤就以 15:00–16:00 入園為目標，不硬趕。</li>
 <li>7/20 是日本海之日國定假日、三連休最後一天，USJ 只當暖身日，不硬排大型設施。</li>
 <li>若入境或交通延誤，USJ 可以延到 16:00 後再入園，不需要硬趕。</li>
 <li>ESLEAD 正式入住 16:00 起；13:30 抵達時以寄放行李為主。</li>
@@ -525,7 +529,7 @@ tr:hover td{background:rgba(0,0,0,.015)}
 <div class="detail-box"><h4>必帶 / 必查</h4><ul>
 <li>兩間飯店地址、京都住宿入住方式、住宿稅現金。</li>
 <li>RESI STAY 行李寄放方式、入住信件與緊急聯絡資訊。</li>
-<li>HARUKA 預訂資料、付款實體信用卡、4 位數認證碼、4 人護照與京都站領票位置；領票後核對日期、HARUKA 5、4號車及6A–6D。</li>
+<li>HARUKA 預訂資料、付款實體信用卡、4 位數認證碼、4 人護照與京都站領票位置；領票後核對日期、HARUKA 5、車廂與座位是否和離線票券一致。</li>
 <li>行李輪子狀況、雨具、孩子替換衣物。</li>
 <li>到京都後先確認回飯店路線，避免晚上迷路。</li>
 </ul></div>
@@ -582,7 +586,7 @@ tr:hover td{background:rgba(0,0,0,.015)}
 <li>票券方向是「龜岡 → 嵯峨 / 嵐山」，所以不要先去嵐山再想搭車。</li>
 <li>乘車 QR code 僅於 7/27 當日顯示，需開啟原始 E-ticket；前一晚確認可正常登入。</li>
 <li>小火車已購買大人 2 + 兒童 2，已付款 JPY 2,640。</li>
-<li>座位為嵯峨野4號、4號車16A–16D。</li>
+<li>座位為嵯峨野4號的 4 人連號指定席；座位詳見離線票券。</li>
 <li>猴子公園預設刪除，避免爬坡透支體力。</li>
 </ul></div>
 <div class="detail-box"><h4>刪減順序</h4><ul>
@@ -643,7 +647,7 @@ tr:hover td{background:rgba(0,0,0,.015)}
 <div><strong>06:00</strong>完成退房，確認護照 / 機票 / 行李</div>
 <div><strong>06:10</strong>離開 RESI STAY HEART，搭計程車前往京都站</div>
 <div><strong>06:25–06:35</strong>抵達京都站，依當日看板前往 HARUKA 月台</div>
-<div><strong>06:44</strong>搭乘 HARUKA 5；普通車指定席 4號車6A–6D</div>
+<div><strong>06:44</strong>搭乘 HARUKA 5；4 人連號普通車指定席</div>
 <div><strong>08:19</strong>抵達關西機場站，前往 KIX T1 辦理 check-in / 托運行李</div>
 <div><strong>10:30</strong>前到登機門</div>
 <div><strong>11:15</strong>KIX 起飛回台</div>
@@ -673,17 +677,19 @@ tr:hover td{background:rgba(0,0,0,.015)}
 
 <section class="section" id="transport">
 <div class="section-head"><div class="dot" style="background:#2A7A5A"></div><h2 class="section-title">交通備註</h2><hr class="line"></div>
+<div class="table-wrap">
 <table>
 <thead><tr><th>日期</th><th>交通重點</th><th>建議</th></tr></thead>
 <tbody>
-<tr><td>7/20</td><td>KIX → 大阪飯店 → USJ</td><td>到飯店寄放行李後，14:30 到 USJ 大門排隊，15:00 後入園</td></tr>
+<tr><td>7/20</td><td>KIX → 大阪飯店 → USJ</td><td>到飯店寄放行李後，14:30 起視通關與交通狀況前往 USJ，目標 15:00–16:00 入園</td></tr>
 <tr><td>7/25</td><td>大阪 → 京都 → 清水寺</td><td>搬飯店日；抵達京都站時先領 7/29 HARUKA 5 實體票，再去寄放行李 / 清水寺</td></tr>
 <tr><td>7/26</td><td><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Kyoto+Station" target="_blank" rel="noopener">京都站附近</a> → <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Fushimi+Inari+Taisha" target="_blank" rel="noopener">伏見稻荷</a></td><td>以 JR 為主，不建議公車</td></tr>
-<tr><td>7/27</td><td>京都 → JR馬堀 → トロッコ亀岡 → トロッコ嵯峨</td><td>10:30 嵯峨野4號，4號車16A–16D；QR 當日顯示，不要搭到 JR亀岡站</td></tr>
+<tr><td>7/27</td><td>京都 → JR馬堀 → トロッコ亀岡 → トロッコ嵯峨</td><td>10:30 嵯峨野4號，4人連號指定席；QR 當日顯示，不要搭到 JR亀岡站</td></tr>
 <tr><td>7/28</td><td>RESI STAY HEART → 金閣寺</td><td>08:30 叫車，08:55 到金閣寺門口，09:00 開門第一波入場</td></tr>
 <tr><td>7/29</td><td>京都 → 關西機場</td><td>06:10 離開住宿，06:25–06:35 到京都站；06:44 HARUKA 5，08:19 抵達</td></tr>
 </tbody>
 </table>
+</div>
 <div class="card blue-card" style="margin-top:14px">
 <span class="tag info">京都公車</span>
 <div class="list">
