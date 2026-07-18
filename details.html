@@ -38,6 +38,9 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--paper);color:var(--i
 .dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
 .line{flex:1;height:1px;background:var(--paper-warm);border:none}
 .section-title{font-family:'DM Serif Display',serif;font-size:24px}
+.source-rule{margin:0 0 16px;padding:13px 16px;border:1px solid var(--blue-mid);border-left:4px solid var(--blue);border-radius:12px;background:var(--blue-bg);font-size:13px;line-height:1.7;color:var(--ink-soft)}
+.source-rule strong{color:var(--ink);font-weight:700}
+.source-rule.special{border-color:var(--warn-mid);border-left-color:var(--warn-mid);background:var(--warn-bg)}
 
 /* CARDS */
 .cards,.subgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
@@ -366,8 +369,11 @@ tr:hover td{background:rgba(0,0,0,.015)}
 </div>
 </section>
 
-<section class="section" id="daily-detail">
+<section class="section" id="daily-detail" data-hermes-source="canonical" data-hermes-source-url="https://c0h3i3n.github.io/kansai-trip-2026/details.html#daily-detail" data-hermes-cache-policy="refresh" data-hermes-nightly-time="20:30" data-hermes-timezone="Asia/Tokyo">
 <div class="section-head"><div class="dot" style="background:#C4541A"></div><h2 class="section-title">每日詳細攻略</h2><hr class="line"></div>
+<aside class="source-rule" id="hermes-source-rule" role="note">
+<strong>Hermes／自動提醒唯一基準：</strong>只使用本區「每日詳細攻略」，不可混用首頁、航班摘要、舊對話或快取內容。每次抓取須在網址加上新的時間戳查詢參數並忽略前一次內容。旅行期間每日 20:30（日本時間）重新讀取本區，將隔日的交通、固定時間、票券、必帶物品與備案傳送至 Telegram；若本區無法讀取或資料不足，回報需要人工確認，不得自行用其他摘要補齊。
+</aside>
 <div class="daily-stack">
 
 <article class="day-detail osaka">
@@ -493,6 +499,9 @@ tr:hover td{background:rgba(0,0,0,.015)}
 <article class="day-detail osaka">
 <span class="tag osaka">7/23 週四 · 海遊館 + 天保山</span>
 <h3>目標：USJ 後的恢復日，用大型室內水族館穩定親子節奏</h3>
+<aside class="source-rule special" role="note" data-hermes-reminder-date="2026-07-23" data-hermes-reminder-time="08:00" data-hermes-timezone="Asia/Tokyo">
+<strong>Hermes 當日提醒（08:00 日本時間）：</strong>海遊館今日 09:30 入館。08:20 準時離開飯店。出門前確認 4 張 QR code、薄外套、水壺、行動電源。此提醒取代原本 08:15 的提醒，不得重複發送。
+</aside>
 <div class="day-detail-grid">
 <div class="detail-box"><h4>保守時間表</h4><div class="time-list">
 <div><strong>08:00</strong>起床，簡單早餐，確認海遊館 QR code</div>
