@@ -487,6 +487,51 @@
     font-family: 'DM Serif Display', serif;
   }
 
+  /* === POST-TRIP STATS === */
+  .trip-stat-summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+  .trip-stat-card {
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.07);
+    border-radius: 14px;
+    padding: 16px 18px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .trip-stat-label {
+    font-size: 10.5px;
+    color: var(--ink-muted);
+    letter-spacing: .06em;
+    margin-bottom: 5px;
+  }
+  .trip-stat-value {
+    font-family: 'DM Serif Display', serif;
+    font-size: 24px;
+    color: var(--ink);
+  }
+  .trip-step-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .trip-step {
+    background: var(--paper-warm);
+    border: 1px solid rgba(0,0,0,0.06);
+    border-radius: 10px;
+    padding: 10px 12px;
+    text-align: center;
+  }
+  .trip-step-day { font-size: 10.5px; color: var(--ink-muted); margin-bottom: 3px; }
+  .trip-step-value { font-family: 'DM Serif Display', serif; font-size: 17px; color: var(--ink); }
+  @media (max-width: 600px) {
+    .trip-stat-summary { grid-template-columns: 1fr; }
+    .trip-step-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+
   /* === BUDGET === */
   .budget-table {
     background: #fff;
@@ -896,6 +941,7 @@
   <a href="#hotels" class="nav-tab info-tab">住宿</a>
   <a href="#reminders" class="nav-tab info-tab">提醒事項</a>
   <a href="details.html" class="nav-tab info-tab">詳細資訊</a>
+  <a href="#trip-stats" class="nav-tab info-tab">旅後統計</a>
   <a href="#budget" class="nav-tab info-tab">預算</a>
 </nav>
 
@@ -1375,6 +1421,62 @@
   </section>
 
 
+  <!-- ============ 旅後統計 ============ -->
+  <section class="section" id="trip-stats">
+    <div class="section-head">
+      <div class="section-dot" style="background:#1A4FAD"></div>
+      <h2 class="section-title">旅後統計 <span class="section-title-jp">Trip Stats</span></h2>
+      <hr class="section-line">
+    </div>
+
+    <div class="trip-stat-summary">
+      <div class="trip-stat-card">
+        <div class="trip-stat-label">10 天總步數</div>
+        <div class="trip-stat-value">108,014 步</div>
+      </div>
+      <div class="trip-stat-card">
+        <div class="trip-stat-label">每日平均</div>
+        <div class="trip-stat-value">10,801 步</div>
+      </div>
+      <div class="trip-stat-card">
+        <div class="trip-stat-label">單日最高 · 7/20</div>
+        <div class="trip-stat-value">14,069 步</div>
+      </div>
+    </div>
+
+    <div class="trip-step-grid">
+      <div class="trip-step"><div class="trip-step-day">7/20</div><div class="trip-step-value">14,069</div></div>
+      <div class="trip-step"><div class="trip-step-day">7/21</div><div class="trip-step-value">13,150</div></div>
+      <div class="trip-step"><div class="trip-step-day">7/22</div><div class="trip-step-value">10,425</div></div>
+      <div class="trip-step"><div class="trip-step-day">7/23</div><div class="trip-step-value">8,350</div></div>
+      <div class="trip-step"><div class="trip-step-day">7/24</div><div class="trip-step-value">10,489</div></div>
+      <div class="trip-step"><div class="trip-step-day">7/25</div><div class="trip-step-value">10,117</div></div>
+      <div class="trip-step"><div class="trip-step-day">7/26</div><div class="trip-step-value">8,103</div></div>
+      <div class="trip-step"><div class="trip-step-day">7/27</div><div class="trip-step-value">12,748</div></div>
+      <div class="trip-step"><div class="trip-step-day">7/28</div><div class="trip-step-value">12,962</div></div>
+      <div class="trip-step"><div class="trip-step-day">7/29</div><div class="trip-step-value">7,601</div></div>
+    </div>
+
+    <div class="reminder-grid">
+      <div class="reminder-card full reveal">
+        <div class="reminder-card-label">實際付款方式摘要</div>
+        <div class="reminder-item">
+          <div class="reminder-icon r-info">¥</div>
+          <div><span class="reminder-date">旅途中使用現金約 ¥150,000，已全數用完</span>從台灣攜帶約 ¥100,000，另以信用卡預借約 ¥50,000 現金。</div>
+        </div>
+        <div class="reminder-item">
+          <div class="reminder-icon r-info">✓</div>
+          <div><span class="reminder-date">現金主要用途</span>Shopping、ICOCA 加值、吃飯、計程車與其他零星支出。</div>
+        </div>
+        <div class="reminder-item">
+          <div class="reminder-icon r-info">💳</div>
+          <div><span class="reminder-date">其餘支出</span>未使用上述現金支付的項目，主要以信用卡直接刷卡處理。</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
   <!-- ============ 預算 ============ -->
   <section class="section" id="budget">
     <div class="section-head">
@@ -1461,7 +1563,7 @@
       匯率基準：1 JPY = 0.22 TWD &nbsp;·&nbsp;
       <span style="color:#2A7A5A">■</span> 已確認 NT$92,633 &nbsp;·&nbsp;
       <span style="color:#7A4F00">■</span> 預估 NT$20,273<br>
-      此區保留行前預算快照，尚未依旅途中實際消費重新結算。
+      此區保留行前預算快照，尚未依旅途中實際消費重新結算；旅後約 ¥150,000 現金用量請以上方「旅後統計」為準，未重複加進此合計。
     </div>
   </section>
 
