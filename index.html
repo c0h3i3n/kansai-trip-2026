@@ -909,6 +909,8 @@
 }
 
 </style>
+<link rel="stylesheet" href="assets/trip.css">
+<script src="assets/trip.js" defer></script>
 </head>
 <body>
 
@@ -933,7 +935,7 @@
 </div>
 
 <!-- NAV -->
-<nav class="nav-tabs">
+<nav class="nav-tabs" aria-label="主要導覽">
   <a href="#osaka" class="nav-tab osaka-tab">大阪</a>
   <a href="#move" class="nav-tab info-tab">移動日</a>
   <a href="#kyoto" class="nav-tab kyoto-tab">京都</a>
@@ -944,8 +946,22 @@
   <a href="#trip-stats" class="nav-tab info-tab">旅後統計</a>
   <a href="#budget" class="nav-tab info-tab">預算</a>
 </nav>
+<div class="day-jump" hidden>
+  <div class="day-jump-inner">
+    <label for="day-select">每日行程</label>
+    <select id="day-select"><option value="">選擇日期</option></select>
+    <a class="map-link" id="today-link" hidden>今天</a>
+  </div>
+</div>
 
 <main class="main">
+  <section class="trip-status" aria-label="旅程狀態">
+    <div class="trip-status-label" data-status-label>旅程日期</div>
+    <h2 data-status-title>2026 關西親子遊</h2>
+    <p data-status-note>2026/7/20–7/29 · 10 天 9 夜</p>
+    <div class="trip-countdown" hidden><strong data-cd-days>--</strong>天 <strong data-cd-hours>--</strong>小時 <strong data-cd-minutes>--</strong>分鐘</div>
+    <a class="map-link" data-status-action href="#osaka">查看每日行程</a>
+  </section>
   <div class="weather-bar" id="weather-bar">
     <div class="weather-city">
       <div class="weather-city-name">🟠 大阪 Osaka · 即時天氣</div>
@@ -960,22 +976,6 @@
   </div>
 
 
-  <div class="countdown-bar">
-    <div class="countdown-label">✈️ 2026 關西旅程紀錄</div>
-    <div class="countdown-digits" id="countdown">
-      <div class="countdown-unit"><span class="countdown-num" id="cd-days">--</span><span class="countdown-sub">天</span></div>
-      <div class="countdown-sep">:</div>
-      <div class="countdown-unit"><span class="countdown-num" id="cd-hours">--</span><span class="countdown-sub">小時</span></div>
-      <div class="countdown-sep">:</div>
-      <div class="countdown-unit"><span class="countdown-num" id="cd-mins">--</span><span class="countdown-sub">分鐘</span></div>
-    </div>
-    <div class="countdown-label">🗓 7/20–7/29 · 已平安返台</div>
-  </div>
-
-  <div class="highlight-note">
-    🟠 橘色 = 大阪 &nbsp;·&nbsp; 🟢 綠色 = 京都 &nbsp;·&nbsp; 灰色 = 移動/回程日 &nbsp;·&nbsp; <span class="badge badge-warn">⏰ 黃色</span> = 需要搶票/注意
-  </div>
-
   <!-- ============ OSAKA ============ -->
   <section class="section osaka" id="osaka">
     <div class="section-head">
@@ -985,7 +985,7 @@
       <span style="font-size:12px;color:var(--ink-muted);white-space:nowrap">7/20 – 7/24 · 5天</span>
     </div>
 
-    <div class="day-card osaka">
+    <div class="day-card osaka" id="day-2026-07-20" data-date="2026-07-20">
       <div class="day-aside">
         <div class="day-num">20</div>
         <div class="day-month">7月</div>
@@ -1011,7 +1011,7 @@
       </div>
     </div>
 
-    <div class="day-card osaka">
+    <div class="day-card osaka" id="day-2026-07-21" data-date="2026-07-21">
       <div class="day-aside">
         <div class="day-num">21</div>
         <div class="day-month">7月</div>
@@ -1037,7 +1037,7 @@
       </div>
     </div>
 
-    <div class="day-card osaka">
+    <div class="day-card osaka" id="day-2026-07-22" data-date="2026-07-22">
       <div class="day-aside">
         <div class="day-num">22</div>
         <div class="day-month">7月</div>
@@ -1062,7 +1062,7 @@
       </div>
     </div>
 
-    <div class="day-card osaka">
+    <div class="day-card osaka" id="day-2026-07-23" data-date="2026-07-23">
       <div class="day-aside">
         <div class="day-num">23</div>
         <div class="day-month">7月</div>
@@ -1086,7 +1086,7 @@
       </div>
     </div>
 
-    <div class="day-card osaka">
+    <div class="day-card osaka" id="day-2026-07-24" data-date="2026-07-24">
       <div class="day-aside">
         <div class="day-num">24</div>
         <div class="day-month">7月</div>
@@ -1118,7 +1118,7 @@
       <hr class="section-line">
     </div>
 
-    <div class="day-card travel">
+    <div class="day-card travel" id="day-2026-07-25" data-date="2026-07-25">
       <div class="day-aside">
         <div class="day-num">25</div>
         <div class="day-month">7月</div>
@@ -1154,7 +1154,7 @@
       <span style="font-size:12px;color:var(--ink-muted);white-space:nowrap">7/25 – 7/29 · 4晚 / 遊覽4天</span>
     </div>
 
-    <div class="day-card kyoto">
+    <div class="day-card kyoto" id="day-2026-07-26" data-date="2026-07-26">
       <div class="day-aside">
         <div class="day-num">26</div>
         <div class="day-month">7月</div>
@@ -1178,7 +1178,7 @@
       </div>
     </div>
 
-    <div class="day-card kyoto">
+    <div class="day-card kyoto" id="day-2026-07-27" data-date="2026-07-27">
       <div class="day-aside">
         <div class="day-num">27</div>
         <div class="day-month">7月</div>
@@ -1205,7 +1205,7 @@
       </div>
     </div>
 
-    <div class="day-card kyoto">
+    <div class="day-card kyoto" id="day-2026-07-28" data-date="2026-07-28">
       <div class="day-aside">
         <div class="day-num">28</div>
         <div class="day-month">7月</div>
@@ -1229,7 +1229,7 @@
       </div>
     </div>
 
-    <div class="day-card travel">
+    <div class="day-card travel" id="day-2026-07-29" data-date="2026-07-29">
       <div class="day-aside">
         <div class="day-num">29</div>
         <div class="day-month">7月</div>
@@ -1292,9 +1292,10 @@
   <section class="section" id="reminders">
     <div class="section-head">
       <div class="section-dot" style="background:#D4870A"></div>
-      <h2 class="section-title">重要訂票提醒</h2>
+      <h2 class="section-title" data-phase-heading="重要訂票提醒" data-archive-heading="票券與行前準備紀錄">重要訂票提醒</h2>
       <hr class="section-line">
     </div>
+    <p class="archive-note" data-archive-note hidden>旅程已結束，以下保留票券使用狀態與行前準備紀錄。</p>
 
     <div class="reminder-grid">
       <div class="reminder-card reveal">
@@ -1607,30 +1608,6 @@
 </footer>
 
 <script>
-  function updateCountdown() {
-    const target = new Date('2026-07-20T06:40:00+08:00');
-    const now = new Date();
-    const diff = target - now;
-    if (diff <= 0) {
-      document.getElementById('countdown').innerHTML = '<span style="color:var(--kyoto);font-family:\'DM Serif Display\',serif;font-size:20px">✓ 旅程圓滿結束，已平安返台</span>';
-      return;
-    }
-    const days  = Math.floor(diff / 86400000);
-    const hours = Math.floor((diff % 86400000) / 3600000);
-    const mins  = Math.floor((diff % 3600000) / 60000);
-    const setCountdownValue = (id, val) => {
-      const el = document.getElementById(id);
-      if (!el) return;
-      const padded = String(val).padStart(2, '0');
-      if (el.textContent !== padded) el.textContent = padded;
-    };
-    setCountdownValue('cd-days', days);
-    setCountdownValue('cd-hours', hours);
-    setCountdownValue('cd-mins', mins);
-  }
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
-
   (function() {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -1664,10 +1641,10 @@
     }
   })();
 
-  const sections = ['osaka','move','kyoto','hotels','reminders','budget'];
+  const sections = ['osaka','move','kyoto','hotels','reminders','trip-stats','budget'];
   const tabs = document.querySelectorAll('.nav-tab');
   function updateActive() {
-    const scrollY = window.scrollY + 80;
+    const scrollY = window.scrollY + (parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--sticky-height')) || 80) + 20;
     let current = sections[0];
     sections.forEach(id => {
       const el = document.getElementById(id);

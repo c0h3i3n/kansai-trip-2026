@@ -141,6 +141,8 @@ tr:hover td{background:rgba(0,0,0,.015)}
 .back-to-top:hover{background:rgba(255,255,255,.14)}
 
 </style>
+<link rel="stylesheet" href="assets/trip.css">
+<script src="assets/trip.js" defer></script>
 </head>
 <body id="top">
 <header class="hero">
@@ -150,7 +152,7 @@ tr:hover td{background:rgba(0,0,0,.015)}
 <a class="back-link" href="./">← 返回主頁</a>
 </header>
 
-<nav class="sticky-nav">
+<nav class="sticky-nav" aria-label="詳細資訊導覽">
   <a href="#flights">航班</a>
   <a href="#hotels-detail">住宿</a>
   <a href="#tickets">票券</a>
@@ -163,6 +165,13 @@ tr:hover td{background:rgba(0,0,0,.015)}
 </nav>
 
 <main class="wrap">
+<section class="trip-status" aria-label="旅程狀態">
+  <div class="trip-status-label" data-status-label>旅程日期</div>
+  <h2 data-status-title>2026 關西親子遊</h2>
+  <p data-status-note>2026/7/20–7/29 · 10 天 9 夜</p>
+  <div class="trip-countdown" hidden><strong data-cd-days>--</strong>天 <strong data-cd-hours>--</strong>小時 <strong data-cd-minutes>--</strong>分鐘</div>
+  <a class="map-link" data-status-action href="./#osaka">查看每日行程</a>
+</section>
 
 <section class="section" id="flights">
 <div class="section-head"><div class="dot" style="background:#1A4FAD"></div><h2 class="section-title">航班資訊</h2><hr class="line"></div>
@@ -270,7 +279,8 @@ tr:hover td{background:rgba(0,0,0,.015)}
 </section>
 
 <section class="section" id="tickets">
-<div class="section-head"><div class="dot" style="background:#D4870A"></div><h2 class="section-title">票券與預約</h2><hr class="line"></div>
+<div class="section-head"><div class="dot" style="background:#D4870A"></div><h2 class="section-title" data-phase-heading="票券與預約" data-archive-heading="票券與預約紀錄">票券與預約</h2><hr class="line"></div>
+<p class="archive-note" data-archive-note hidden>旅程已結束，以下保留票券使用、取消與付款紀錄，行前使用說明僅供回顧。</p>
 <div class="subgrid">
 <div class="card blue-card">
 <span class="tag info">機場交通</span>
@@ -930,14 +940,13 @@ tr:hover td{background:rgba(0,0,0,.015)}
 <div class="section-head"><div class="dot" style="background:#aaa"></div><h2 class="section-title">圖片來源與授權</h2><hr class="line"></div>
 <div class="card">
 <div class="list">
-<div><strong>所有照片</strong>均來自 <a class="map-link" href="https://commons.wikimedia.org/" target="_blank" rel="noopener">Wikimedia Commons</a>，採用 Creative Commons 授權（CC BY / CC BY-SA / Public Domain）。</div>
-<div>· 道頓堀 — <em>Wikimedia Commons, CC BY-SA</em></div>
-<div>· 海遊館 — <em>Wikimedia Commons, CC BY-SA</em></div>
-<div>· 清水寺 — <em>Wikimedia Commons, CC BY-SA</em></div>
-<div>· 伏見稻荷千本鳥居 — <em>Wikimedia Commons, CC BY-SA</em></div>
-<div>· 嵐山竹林 — <em>Wikimedia Commons, CC BY-SA</em></div>
-<div>· 金閣寺 — <em>Wikimedia Commons, CC BY-SA</em></div>
-<div>· 關西機場 — <em>Wikimedia Commons, Public Domain</em></div>
+<div>照片用於景點示意，並非本次旅程實拍。已確認來源列於下方；本站照片經縮小、壓縮，版面顯示可能裁切，CC BY-SA 照片的修改版本沿用各自所列授權。</div>
+<div>· 海遊館（kaiyukan.jpg） — Teddy Yoshida（Harajuku），<a class="map-link" href="https://commons.wikimedia.org/wiki/File:Kaiyukan.JPG" target="_blank" rel="noopener">原圖與作者聲明</a>，Public domain（公眾領域）</div>
+<div>· 清水寺（kiyomizu-dera.jpg） — Grueslayer @Wikipedia，<a class="map-link" href="https://commons.wikimedia.org/wiki/File:JAP_Kyoto_Kiyomizu-dera.jpg" target="_blank" rel="noopener">原圖</a>，<a class="map-link" href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a></div>
+<div>· 伏見稻荷千本鳥居（fushimi-inari.jpg） — Marco Almbauer，<a class="map-link" href="https://commons.wikimedia.org/wiki/File:Torii,_Fushimi_Inari-Taisha.jpg" target="_blank" rel="noopener">原圖</a>，<a class="map-link" href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a></div>
+<div>· 嵐山竹林（arashiyama-bamboo.jpg） — <a class="map-link" href="https://mitchandrewvisuals.com/" target="_blank" rel="noopener">Mitchell Andrew（Mitchwandrew）</a>，<a class="map-link" href="https://commons.wikimedia.org/wiki/File:Arashiyama_Bamboo_Grove.jpg" target="_blank" rel="noopener">原圖</a>，<a class="map-link" href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a></div>
+<div>· 關西機場（kix.jpg） — Whity（上傳者 Kirakirameister），<a class="map-link" href="https://commons.wikimedia.org/wiki/File:Kansai_International_Airport.jpg" target="_blank" rel="noopener">原圖</a>，<a class="map-link" href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a></div>
+<div>· USJ 入口、USJ 哈利波特區、道頓堀、金閣寺（usj-entrance.jpg、usj-harry-potter.jpg、dotonbori.jpg、kinkakuji.jpg） — 原始來源、作者與授權尚待確認，暫不標示為 Creative Commons 或公眾領域。</div>
 <div>· KidZania 甲子園外觀 — <a class="map-link" href="https://commons.wikimedia.org/wiki/File:Kizzania.jpg" target="_blank" rel="noopener">wiki0001／Wikimedia Commons</a>，<a class="map-link" href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener">CC BY 3.0</a></div>
 <div>· 祇園花見小路夜景 — <a class="map-link" href="https://commons.wikimedia.org/wiki/File:Gion_at_night_(31051047850).jpg" target="_blank" rel="noopener">“Gion at night” by fw42／Wikimedia Commons</a>，<a class="map-link" href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener">CC BY 2.0</a>（網站使用 1280px 縮圖）</div>
 <div style="margin-top:6px;color:var(--ink-muted)">本網站為私人家庭旅遊規劃，無商業用途。</div>
@@ -953,7 +962,7 @@ tr:hover td{background:rgba(0,0,0,.015)}
 </div>
 </main>
 <script>
-  const detailSections = ['flights','hotels-detail','tickets','daily-detail','transport','backup','credits'];
+  const detailSections = ['flights','hotels-detail','tickets','daily-detail','trip-stats-detail','transport','backup','credits'];
   const detailTabs = document.querySelectorAll('.sticky-nav a');
   function updateDetailNav() {
     const scrollY = window.scrollY + 80;
